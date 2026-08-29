@@ -645,14 +645,64 @@ jobs:
           PUBLIC_REPO_TOKEN: ${{ secrets.PUBLIC_REPO_TOKEN }}
           PUBLIC_REPO: ${{ vars.PUBLIC_REPO }}
 
-      - name: Commit cache/state (not outputs — those are pushed to PUBLIC_REPO by index.js)
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "Update geo cache & history"
-          branch: ${{ github.head_ref || github.ref_name }}
-          file_pattern: '.state/*'
-          commit_user_name: "GitHub Actions"
-          commit_user_email: "actions@github.com"
+      - name: Commit and push cache/state (not outputs — those are pushed to PUBLIC_REPO by index.js)
+        run: |
+          set -e
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+
+          if [ ! -d .state ] || [ -z "$(ls -A .state 2>/dev/null)" ]; then
+            echo "No .state/ output to commit"
+            exit 0
+          fi
+
+          # .state/* (geo cache, output history) is fully rewritten by
+          # index.js each run, not hand-edited, so — same as every other
+          # commit/push step in this workflow — there's nothing worth a
+          # textual 3-way merge. Snapshot it and, on every attempt, reset
+          # hard to whatever is currently on origin/main before dropping our
+          # copy back on top. This replaces stefanzweifel/git-auto-commit-action,
+          # which committed then did a single unguarded push with no retry:
+          # the moment another commit landed on main in between (this run
+          # showed remote 1 commit ahead by the time this step ran), it
+          # failed outright with "non-fast-forward" and no way to recover.
+          # If this keeps happening often, it's worth checking whether
+          # something else (another workflow, a manual push, or an
+          # overlapping trigger not covered by the `concurrency:` group
+          # above) is also committing to this repo's main branch.
+          mkdir -p /tmp/converter-snapshot
+          tar -cf /tmp/converter-snapshot/state.tar .state
+
+          max_retries=5
+          retry_count=0
+
+          while [ $retry_count -lt $max_retries ]; do
+            git fetch origin main
+            git reset --hard origin/main
+            tar -xf /tmp/converter-snapshot/state.tar
+            git add .state/
+
+            if git diff --cached --quiet; then
+              echo "No changes to commit (remote already matches)"
+              exit 0
+            fi
+
+            git commit -m "Update geo cache & history"
+
+            if git push; then
+              echo "Successfully pushed cache/state"
+              exit 0
+            fi
+
+            retry_count=$((retry_count + 1))
+            if [ $retry_count -lt $max_retries ]; then
+              echo "Push failed (remote moved), retrying in 15 seconds... (Attempt $retry_count/$max_retries)"
+              sleep 15
+            fi
+          done
+
+          echo "Failed to push cache/state after $max_retries attempts"
+          exit 1
 
       - name: Send Telegram Notification on Failure (converter)
         if: failure()
