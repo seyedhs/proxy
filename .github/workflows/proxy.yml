@@ -328,17 +328,12 @@ jobs:
         run: |
           timestamp=$(date +%s)
 
-          sed -i "s/channel_stats_chart\.svg?v=[0-9]*/channel_stats_chart.svg?v=$timestamp/" README.md
-          sed -i "s/performance_report\.html?v=[0-9]*/performance_report.html?v=$timestamp/" README.md
-
-          sed -i "s/channel_stats_chart\.svg?v=[0-9]*/channel_stats_chart.svg?v=$timestamp/" README_FA.md
-          sed -i "s/performance_report\.html?v=[0-9]*/performance_report.html?v=$timestamp/" README_FA.md
-
-          sed -i "s/channel_stats_chart\.svg?v=[0-9]*/channel_stats_chart.svg?v=$timestamp/" README_CN.md
-          sed -i "s/performance_report\.html?v=[0-9]*/performance_report.html?v=$timestamp/" README_CN.md
-
-          sed -i "s/channel_stats_chart\.svg?v=[0-9]*/channel_stats_chart.svg?v=$timestamp/" README_RU.md
-          sed -i "s/performance_report\.html?v=[0-9]*/performance_report.html?v=$timestamp/" README_RU.md
+          for file in README.md README_FA.md README_CN.md README_RU.md; do
+            if [ -f "$file" ]; then
+              sed -i "s/channel_stats_chart\.svg?v=[0-9]*/channel_stats_chart.svg?v=$timestamp/" "$file" || true
+              sed -i "s/performance_report\.html?v=[0-9]*/performance_report.html?v=$timestamp/" "$file" || true
+            fi
+          done
 
       - name: Sync output files to public repo
         run: |
@@ -393,10 +388,10 @@ jobs:
           git add configs/location_cache.json
           git add configs/channel_stats.json
           git add assets/
-          git add README.md
-          git add README_FA.md
-          git add README_CN.md
-          git add README_RU.md
+          [ -f README.md ] && git add README.md || true
+          [ -f README_FA.md ] && git add README_FA.md || true
+          [ -f README_CN.md ] && git add README_CN.md || true
+          [ -f README_RU.md ] && git add README_RU.md || true
 
           if git diff --cached --quiet; then
             echo "No changes to commit"
@@ -464,7 +459,9 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add README.md
+          if [ -f README.md ]; then
+            git add README.md
+          fi
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
