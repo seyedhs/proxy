@@ -425,6 +425,14 @@ jobs:
           echo "Failed to push after $max_retries attempts"
           exit 1
 
+      - name: Send Telegram Notification on Failure (update-configs)
+        if: failure()
+        run: |
+          curl -s -X POST "https://api.telegram.org/bot${{ secrets.BOT_TOKEN }}/sendMessage" \
+            -d "chat_id=${{ secrets.ADMIN_CHAT_ID }}" \
+            -d "parse_mode=HTML" \
+            -d "text=❌ <b>خطا در اجرا (update-configs)!</b>%0A%0A📌 <b>ریپازیتوری:</b> ${{ github.repository }}%0A🔗 <a href='https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}'>مشاهده لوگ‌های خطا در گیتهاب</a>"
+
   proxy-scan:
     needs: update-configs
     runs-on: ubuntu-latest
@@ -463,3 +471,11 @@ jobs:
             git commit -m "proxy scan: update private stats"
             git push
           fi
+
+      - name: Send Telegram Notification on Failure (proxy-scan)
+        if: failure()
+        run: |
+          curl -s -X POST "https://api.telegram.org/bot${{ secrets.BOT_TOKEN }}/sendMessage" \
+            -d "chat_id=${{ secrets.ADMIN_CHAT_ID }}" \
+            -d "parse_mode=HTML" \
+            -d "text=❌ <b>خطا در اجرا (proxy-scan)!</b>%0A%0A📌 <b>ریپازیتوری:</b> ${{ github.repository }}%0A🔗 <a href='https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}'>مشاهده لوگ‌های خطا در گیتهاب</a>"
