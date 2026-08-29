@@ -16,12 +16,7 @@
       "https://raw.githubusercontent.com/TheSpeedX/PROXY-List/refs/heads/master/http.txt"
     ],
     "E": [
-      "https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/verified/configs.txt",
-      "https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/all_configs.txt",
-      "https://raw.githubusercontent.com/mahsanet/MahsaFreeConfig/refs/heads/main/mtn/sub_1.txt",
-      "https://raw.githubusercontent.com/iampedii/whitedns-sub/refs/heads/main/base64.txt",
-      "https://raw.githubusercontent.com/4n0nymou3/multi-proxy-config-fetcher/refs/heads/main/configs/proxy_configs_tested.txt",
-      "https://raw.githubusercontent.com/roosterkid/openproxylist/main/V2RAY_RAW.txt"  
+      "https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/verified/configs.txt"
     ]
   },
   "outputs": [
@@ -32,6 +27,6 @@
     { "id": "B-txt", "group": "B", "format": "txt", "filename": "fragment_fingerprint.txt", "enabled": true, "skipGeo": true, "maxCount": 200 },
     { "id": "C-socks5", "group": "C", "format": "socks5", "filename": "socks5.txt", "enabled": false, "skipGeo": false, "maxCount": 200 },
     { "id": "D-http", "group": "D", "format": "http", "filename": "http.txt", "enabled": false, "skipGeo": false, "maxCount": 200 },
-    { "id": "E-cdn", "group": "E", "format": "cdn-clean-ip", "filename": "CF.txt", "enabled": true, "skipGeo": true, "maxCount": 100 }
+    { "id": "E-cdn", "group": "E", "format": "cdn-clean-ip", "filename": "CF.txt", "enabled": false, "skipGeo": true, "maxCount": 100 }
   ]
 }
