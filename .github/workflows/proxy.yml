@@ -400,29 +400,48 @@ jobs:
       - name: Commit and push public repo (configs output)
         working-directory: public-repo
         run: |
-          git add configs/
-
-          if git diff --cached --quiet; then
-            echo "No changes to commit"
+          set -e
+          if [ ! -d configs ] || [ -z "$(ls -A configs 2>/dev/null)" ]; then
+            echo "No configs/ output to commit"
             exit 0
           fi
 
-          git commit -m "Update proxy configs"
+          # Everything under configs/ here is freshly regenerated output, not
+          # hand-edited content, so there is nothing worth a textual 3-way
+          # merge. Snapshot it and, on every attempt, reset hard to whatever
+          # is currently on origin/main before dropping our copy back on top.
+          # This can never hit a merge conflict or leave the checkout in a
+          # detached-HEAD/unresolved state the way `git pull --rebase` can
+          # (see the proxy-scan job's push step for what that failure looked
+          # like in practice).
+          mkdir -p /tmp/public-repo-snapshot
+          tar -cf /tmp/public-repo-snapshot/configs.tar configs
 
           max_retries=5
           retry_count=0
 
           while [ $retry_count -lt $max_retries ]; do
+            git fetch origin main
+            git reset --hard origin/main
+            tar -xf /tmp/public-repo-snapshot/configs.tar
+            git add configs/
+
+            if git diff --cached --quiet; then
+              echo "No changes to commit (remote already matches)"
+              exit 0
+            fi
+
+            git commit -m "Update proxy configs"
+
             if git push; then
               echo "Successfully pushed changes to public repo"
               exit 0
-            else
-              retry_count=$((retry_count + 1))
-              if [ $retry_count -lt $max_retries ]; then
-                echo "Push failed, retrying in 30 seconds... (Attempt $retry_count/$max_retries)"
-                sleep 30
-                git pull --rebase origin main || true
-              fi
+            fi
+
+            retry_count=$((retry_count + 1))
+            if [ $retry_count -lt $max_retries ]; then
+              echo "Push failed (remote moved), retrying in 30 seconds... (Attempt $retry_count/$max_retries)"
+              sleep 30
             fi
           done
 
@@ -431,38 +450,57 @@ jobs:
 
       - name: Commit and push private repo (cache, stats page, assets)
         run: |
+          set -e
           # location_cache.json stays in the private repo only — it's an internal
           # cache read back in on the next run (enrich_configs.py / rename_configs.py),
           # not a distributed output.
-          git add configs/location_cache.json
-          git add configs/channel_stats.json
-          git add assets/
-          [ -f README.md ] && git add README.md || true
-          [ -f README_FA.md ] && git add README_FA.md || true
-          [ -f README_CN.md ] && git add README_CN.md || true
-          [ -f README_RU.md ] && git add README_RU.md || true
+          PATHS_TO_COMMIT=""
+          for f in configs/location_cache.json configs/channel_stats.json assets \
+                   README.md README_FA.md README_CN.md README_RU.md; do
+            [ -e "$f" ] && PATHS_TO_COMMIT="$PATHS_TO_COMMIT $f"
+          done
 
-          if git diff --cached --quiet; then
-            echo "No changes to commit"
+          if [ -z "$PATHS_TO_COMMIT" ]; then
+            echo "Nothing to commit"
             exit 0
           fi
 
-          git commit -m "Update cache, stats and reports"
+          # All of these are regenerated on every run, not hand-edited, so
+          # there is nothing worth a textual 3-way merge. Snapshot them and,
+          # on every attempt, reset hard to whatever is currently on
+          # origin/main before dropping our copies back on top. This can
+          # never hit a merge conflict or leave the checkout in a
+          # detached-HEAD/unresolved state the way `git pull --rebase` can
+          # (see the proxy-scan job's push step for what that failure looked
+          # like in practice).
+          mkdir -p /tmp/private-repo-snapshot
+          tar -cf /tmp/private-repo-snapshot/outputs.tar $PATHS_TO_COMMIT
 
           max_retries=5
           retry_count=0
 
           while [ $retry_count -lt $max_retries ]; do
+            git fetch origin main
+            git reset --hard origin/main
+            tar -xf /tmp/private-repo-snapshot/outputs.tar
+            git add $PATHS_TO_COMMIT
+
+            if git diff --cached --quiet; then
+              echo "No changes to commit (remote already matches)"
+              exit 0
+            fi
+
+            git commit -m "Update cache, stats and reports"
+
             if git push; then
               echo "Successfully pushed changes"
               exit 0
-            else
-              retry_count=$((retry_count + 1))
-              if [ $retry_count -lt $max_retries ]; then
-                echo "Push failed, retrying in 30 seconds... (Attempt $retry_count/$max_retries)"
-                sleep 30
-                git pull --rebase origin main || true
-              fi
+            fi
+
+            retry_count=$((retry_count + 1))
+            if [ $retry_count -lt $max_retries ]; then
+              echo "Push failed (remote moved), retrying in 30 seconds... (Attempt $retry_count/$max_retries)"
+              sleep 30
             fi
           done
 
@@ -511,35 +549,52 @@ jobs:
 
       - name: Commit and push updated stats (private repo only)
         run: |
+          set -e
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          
-          if [ -f README.md ]; then
-            git add README.md
-          fi
 
-          if git diff --cached --quiet; then
-            echo "No changes to commit"
+          if [ ! -f README.md ]; then
+            echo "No README.md produced, nothing to commit"
             exit 0
           fi
 
-          git commit -m "proxy scan: update private stats"
+          # README.md is fully machine-generated (rewritten in full each run),
+          # so there is never anything worth a textual 3-way merge. Snapshot
+          # our freshly generated copy, then on every attempt reset hard to
+          # whatever is currently on origin/main and drop our copy back on
+          # top before committing. This can never produce a merge conflict
+          # or leave the checkout in a detached-HEAD/unresolved state the
+          # way `git pull --rebase` did (see the failure this replaced:
+          # a rebase conflict left HEAD detached, so every retry after that
+          # just failed with "not currently on a branch").
+          mkdir -p /tmp/proxy-scan-snapshot
+          cp README.md /tmp/proxy-scan-snapshot/README.md
 
           max_retries=5
           retry_count=0
 
           while [ $retry_count -lt $max_retries ]; do
-            git pull --rebase origin main || true
+            git fetch origin main
+            git reset --hard origin/main
+            cp /tmp/proxy-scan-snapshot/README.md README.md
+            git add README.md
+
+            if git diff --cached --quiet; then
+              echo "No changes to commit (remote already matches)"
+              exit 0
+            fi
+
+            git commit -m "proxy scan: update private stats"
 
             if git push; then
               echo "Successfully pushed proxy scan stats"
               exit 0
-            else
-              retry_count=$((retry_count + 1))
-              if [ $retry_count -lt $max_retries ]; then
-                echo "Push failed, retrying in 10 seconds... (Attempt $retry_count/$max_retries)"
-                sleep 10
-              fi
+            fi
+
+            retry_count=$((retry_count + 1))
+            if [ $retry_count -lt $max_retries ]; then
+              echo "Push failed (remote moved), retrying in 10 seconds... (Attempt $retry_count/$max_retries)"
+              sleep 10
             fi
           done
 
