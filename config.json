@@ -1,0 +1,32 @@
+{
+  "remarkBase": "زن زندگی آزادی",
+  "numberingStyle": "fa",
+  "cleanIpListUrl": "https://raw.githubusercontent.com/SeyedNG/proxy/refs/heads/main/warp/ip.txt",
+  "sourceGroups": {
+    "A": [
+      "https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/top100.txt"
+    ],
+    "B": [
+      "https://raw.githubusercontent.com/patterniha/Free-Configs/main/configs.txt"
+    ],
+    "C": [
+      "https://raw.githubusercontent.com/TheSpeedX/PROXY-List/refs/heads/master/socks5.txt"
+    ],
+    "D": [
+      "https://raw.githubusercontent.com/TheSpeedX/PROXY-List/refs/heads/master/http.txt"
+    ],
+    "E": [
+      "https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/verified/configs.txt"
+    ]
+  },
+  "outputs": [
+    { "id": "A-txt", "group": "A", "format": "txt", "filename": "proxy_configs_tested.txt", "enabled": false, "skipGeo": false, "maxCount": 100 },
+    { "id": "A-xray-lb", "group": "A", "format": "xray-lb", "filename": "xray_loadbalanced_config.json", "enabled": false, "skipGeo": false, "maxCount": 100 },
+    { "id": "A-singbox", "group": "A", "format": "singbox", "filename": "singbox_configs_tested.json", "options": { "testInterval": "10m", "selectorName": "انتخاب دستی", "urltestName": "بهترین پینگ" }, "enabled": false, "skipGeo": false, "maxCount": 100 },
+    { "id": "A-clash", "group": "A", "format": "clash", "filename": "clash_config.yaml", "options": { "selectorName": "انتخاب دستی", "urltestName": "بهترین پینگ" }, "enabled": false, "skipGeo": false, "maxCount": 100 },
+    { "id": "B-txt", "group": "B", "format": "txt", "filename": "fragment_fingerprint.txt", "enabled": true, "skipGeo": true, "maxCount": 200 },
+    { "id": "C-socks5", "group": "C", "format": "socks5", "filename": "socks5.txt", "enabled": false, "skipGeo": false, "maxCount": 200 },
+    { "id": "D-http", "group": "D", "format": "http", "filename": "http.txt", "enabled": false, "skipGeo": false, "maxCount": 200 },
+    { "id": "E-cdn", "group": "E", "format": "cdn-clean-ip", "filename": "CF.txt", "enabled": false, "skipGeo": false, "maxCount": 100 }
+  ]
+}
