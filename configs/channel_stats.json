@@ -1,23 +1,23 @@
 {
-  "timestamp": "2026-08-30T04:31:14.885648+00:00",
+  "timestamp": "2026-08-30T05:12:53.196735+00:00",
   "channels": [
     {
       "url": "https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/top100.txt",
       "enabled": true,
       "metrics": {
         "total_configs": 100,
-        "valid_configs": 32,
-        "unique_configs": 32,
+        "valid_configs": 45,
+        "unique_configs": 45,
         "avg_response_time": 0.06,
         "success_count": 1,
         "fail_count": 0,
-        "overall_score": 82.92,
-        "last_success": "2026-08-30T04:31:14.258273+00:00",
+        "overall_score": 86.15,
+        "last_success": "2026-08-30T05:12:49.997039+00:00",
         "protocol_counts": {
           "wireguard://": 0,
           "hysteria2://": 0,
           "vless://": 0,
-          "vmess://": 32,
+          "vmess://": 45,
           "ss://": 0,
           "trojan://": 0,
           "tuic://": 0
@@ -31,11 +31,11 @@
         "total_configs": 403,
         "valid_configs": 230,
         "unique_configs": 220,
-        "avg_response_time": 0.07,
+        "avg_response_time": 0.21,
         "success_count": 1,
         "fail_count": 0,
-        "overall_score": 88.08,
-        "last_success": "2026-08-30T04:31:14.286206+00:00",
+        "overall_score": 87.87,
+        "last_success": "2026-08-30T05:12:50.155946+00:00",
         "protocol_counts": {
           "wireguard://": 0,
           "hysteria2://": 0,
@@ -54,11 +54,11 @@
         "total_configs": 167,
         "valid_configs": 125,
         "unique_configs": 123,
-        "avg_response_time": 0.15,
+        "avg_response_time": 0.36,
         "success_count": 1,
         "fail_count": 0,
-        "overall_score": 93.09,
-        "last_success": "2026-08-30T04:31:14.359785+00:00",
+        "overall_score": 92.77,
+        "last_success": "2026-08-30T05:12:50.303517+00:00",
         "protocol_counts": {
           "wireguard://": 0,
           "hysteria2://": 0,
@@ -76,12 +76,12 @@
       "metrics": {
         "total_configs": 642,
         "valid_configs": 393,
-        "unique_configs": 383,
-        "avg_response_time": 0.18,
+        "unique_configs": 382,
+        "avg_response_time": 0.62,
         "success_count": 1,
         "fail_count": 0,
-        "overall_score": 89.39,
-        "last_success": "2026-08-30T04:31:14.883628+00:00",
+        "overall_score": 88.68,
+        "last_success": "2026-08-30T05:12:53.194451+00:00",
         "protocol_counts": {
           "wireguard://": 0,
           "hysteria2://": 0,
@@ -89,6 +89,29 @@
           "vmess://": 2,
           "ss://": 94,
           "trojan://": 171,
+          "tuic://": 0
+        }
+      }
+    },
+    {
+      "url": "https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/verified/configs_base64.txt",
+      "enabled": true,
+      "metrics": {
+        "total_configs": 4244,
+        "valid_configs": 187,
+        "unique_configs": 124,
+        "avg_response_time": 0.39,
+        "success_count": 1,
+        "fail_count": 0,
+        "overall_score": 67.09,
+        "last_success": "2026-08-30T05:12:53.016273+00:00",
+        "protocol_counts": {
+          "wireguard://": 0,
+          "hysteria2://": 7,
+          "vless://": 0,
+          "vmess://": 94,
+          "ss://": 0,
+          "trojan://": 86,
           "tuic://": 0
         }
       }
