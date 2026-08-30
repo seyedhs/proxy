@@ -4,7 +4,9 @@
   "cleanIpListUrl": "https://raw.githubusercontent.com/SeyedNG/proxy/refs/heads/main/ip/us.txt",
   "sourceGroups": {
     "A": [
-      "https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/top100.txt"
+      "https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/top100.txt",
+      "https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/verified/configs_base64.txt",
+      "https://raw.githubusercontent.com/4n0nymou3/multi-proxy-config-fetcher/refs/heads/main/configs/proxy_configs_tested.txt#4n0nymou3"
     ],
     "B": [
       "https://raw.githubusercontent.com/patterniha/Free-Configs/main/configs.txt"
