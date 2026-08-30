@@ -7,8 +7,7 @@ SOURCE_URLS = [
      "https://raw.githubusercontent.com/Delta-Kronecker/V2ray-Config/refs/heads/main/config/countries/us.txt",
      "https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/de.txt",
      "https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/countries/nl.txt",
-
-    # "https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/verified/configs_base64.txt",
+     "https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/verified/configs_base64.txt",
    #  "https://github.com/Delta-Kronecker/V2ray-Config/raw/refs/heads/main/config/all_configs.txt",
    # "https://raw.githubusercontent.com/mahsanet/MahsaFreeConfig/refs/heads/main/mci/sub_1.txt#mci",
    # "https://raw.githubusercontent.com/mahsanet/MahsaFreeConfig/refs/heads/main/mtn/sub_1.txt#mtn",
@@ -53,7 +52,7 @@ SOURCE_URLS = [
 
 # Set to True to fetch the maximum possible number of configurations.
 # If True, SPECIFIC_CONFIG_COUNT will be ignored.
-USE_MAXIMUM_POWER = False
+USE_MAXIMUM_POWER = True
 
 # Desired number of configurations to fetch.
 # This is used only if USE_MAXIMUM_POWER is False.
