@@ -312,6 +312,57 @@ class XrayTester:
             time.sleep(0.05)
 
 
+def config_identity_key(config_str: str) -> Optional[str]:
+    """Address+port+id/password identity for a config link, so configs that
+    are the *same server* but differ only in remark/tag or query-param order
+    are recognized as duplicates -- matching how clients like v2rayNG define
+    'duplicate' when it dedupes a subscription. Returns None for protocols
+    we don't specifically parse here (e.g. tuic/wireguard); callers should
+    fall back to exact-string identity in that case."""
+    try:
+        low = config_str.lower()
+        if low.startswith('vmess://'):
+            d = parser.decode_vmess(config_str)
+            if not d:
+                return None
+            return f"vmess|{d.get('add')}|{d.get('port')}|{d.get('id')}"
+        if low.startswith('vless://'):
+            d = parser.parse_vless(config_str)
+            if not d:
+                return None
+            return f"vless|{d['address']}|{d['port']}|{d['uuid']}"
+        if low.startswith('trojan://'):
+            d = parser.parse_trojan(config_str)
+            if not d:
+                return None
+            return f"trojan|{d['address']}|{d['port']}|{d['password']}"
+        if low.startswith('ss://'):
+            d = parser.parse_shadowsocks(config_str)
+            if not d:
+                return None
+            return f"ss|{d['address']}|{d['port']}|{d['method']}|{d['password']}"
+    except Exception as e:
+        logger.debug(f"Identity-key parse failed, will fall back to exact-string: {str(e)}")
+        return None
+    return None
+
+
+def dedupe_configs(configs: List[str]) -> List[str]:
+    seen = set()
+    deduped = []
+    removed = 0
+    for cfg in configs:
+        key = config_identity_key(cfg) or cfg.strip()
+        if key in seen:
+            removed += 1
+            continue
+        seen.add(key)
+        deduped.append(cfg)
+    if removed:
+        logger.info(f"Removed {removed} duplicate config(s) (same address+port+id, different remark) before testing")
+    return deduped
+
+
 class ParallelXrayTester:
     def __init__(self, xray_path: str = 'xray', max_workers: int = 8,
                  timeouts: List[int] = None, test_urls: List[str] = None):
@@ -461,7 +512,10 @@ def main():
         sys.exit(1)
     
     logger.info(f"Found {len(configs)} configs")
-    
+
+    configs = dedupe_configs(configs)
+    logger.info(f"{len(configs)} configs remain after dedup")
+
     tester = ParallelXrayTester(max_workers=max_workers, timeouts=timeouts, test_urls=test_urls)
     working = tester.test_all(configs)
 

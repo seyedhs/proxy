@@ -88,6 +88,24 @@ def _wait_for_ready(process, port: int, max_wait: float = 2.0, interval: float =
     return process.poll() is None
 
 
+def dedupe_outbounds(outbounds: List[Dict]) -> List[Dict]:
+    """Two outbounds that only differ by 'tag' (remark) are the same server
+    posted twice under different labels -- drop the repeats before testing."""
+    seen = set()
+    deduped = []
+    removed = 0
+    for ob in outbounds:
+        key = json.dumps({k: v for k, v in ob.items() if k != 'tag'}, sort_keys=True)
+        if key in seen:
+            removed += 1
+            continue
+        seen.add(key)
+        deduped.append(ob)
+    if removed:
+        logger.info(f"Removed {removed} duplicate outbound(s) (same settings, different tag) before testing")
+    return deduped
+
+
 class SingBoxTester:
     def __init__(self, singbox_path: str = 'sing-box', timeout: int = 10, test_urls: List[str] = None):
         self.singbox_path = singbox_path
@@ -388,7 +406,10 @@ def main():
         sys.exit(1)
     
     logger.info(f"Found {len(proxy_outbounds)} proxy outbounds")
-    
+
+    proxy_outbounds = dedupe_outbounds(proxy_outbounds)
+    logger.info(f"{len(proxy_outbounds)} outbounds remain after dedup")
+
     tester = ParallelConfigTester(max_workers=max_workers, timeouts=timeouts, test_urls=test_urls)
     working = tester.test_all(proxy_outbounds)
 
