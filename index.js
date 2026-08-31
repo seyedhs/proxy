@@ -1131,8 +1131,14 @@ async function enrichWithGeo(items, label) {
 // اولویت با کانفیگ‌های تازه‌ست: اگه تعداد جدیدها کمتر از maxCount باشه، بقیه‌ی ظرفیت با
 // کانفیگ‌های «قدیمی ولی هنوز معتبر» از خروجی دور قبل (history) پر می‌شه — این‌ها از قبل
 // flag/country مشخص دارن و نیازی به درخواست دوباره ندارن.
-function selectForOutput(outputId, rawConfigs, identityKeyFn, prefix, maxCount) {
+// keepPrevious کنترل می‌کنه این carry-over اصلاً انجام بشه یا نه؛ پیش‌فرض خاموشه یعنی
+// هر اجرا فقط همون کانفیگ‌های تازه‌ی همین دور رو نگه می‌داره و خروجی قبلی کامل بازنویسی می‌شه.
+function selectForOutput(outputId, rawConfigs, identityKeyFn, prefix, maxCount, keepPrevious) {
   const fresh = rawConfigs.map(cfg => ({ cfg, identity: `${prefix}:${identityKeyFn(cfg)}` }));
+  if (!keepPrevious) {
+    const toEnrich = (!maxCount || maxCount <= 0) ? fresh : fresh.slice(0, maxCount);
+    return { toEnrich, carriedOver: [] };
+  }
   if (!maxCount || maxCount <= 0) {
     return { toEnrich: fresh, carriedOver: [] };
   }
@@ -1192,18 +1198,24 @@ async function processConfigs(config) {
     const maxCount = (output.maxCount === undefined || output.maxCount === null)
       ? DEFAULT_MAX_COUNT
       : output.maxCount;
-    console.log(`\n▶️  شروع پردازش خروجی: ${output.id} (${output.format}) — سقف: ${maxCount > 0 ? maxCount : 'بدون سقف'}`);
+    // پیش‌فرض خاموش: کانفیگ‌های دور قبل نگه داشته نمی‌شن، هر اجرا فقط همون کانفیگ‌های
+    // تازه‌ی همین ساب رو می‌ریزه توی فایل خروجی و قدیمی‌ها کامل پاک/بازنویسی می‌شن.
+    // با گذاشتن "keepPrevious": true روی یک خروجی توی config.json می‌شه این رفتار رو
+    // به همون شکل قبلی (نگه‌داشتن کانفیگ‌های قدیمیِ هنوز معتبر تا سقف maxCount) برگردوند.
+    const keepPrevious = output.keepPrevious === true;
+    console.log(`\n▶️  شروع پردازش خروجی: ${output.id} (${output.format}) — سقف: ${maxCount > 0 ? maxCount : 'بدون سقف'} — نگه‌داری قدیمی‌ها: ${keepPrevious ? 'روشن' : 'خاموش'}`);
     try {
       let content;
       let numberedConfigs = [];
 
       if (output.format === 'txt' || output.format === 'cdn-clean-ip') {
         const raw = await getGroupConfigs(output.group, 'vpn');
-        const { toEnrich, carriedOver } = selectForOutput(output.id, raw, vpnIdentityKey, 'vpn', maxCount);
+        const { toEnrich, carriedOver } = selectForOutput(output.id, raw, vpnIdentityKey, 'vpn', maxCount, keepPrevious);
         if (output.skipGeo) console.log(`   ⏭️  [${output.id}] تشخیص لوکیشن برای این خروجی غیرفعاله، رد شد`);
         const enriched = output.skipGeo ? enrichWithoutGeo(toEnrich) : await enrichWithGeo(toEnrich, output.id);
         const finalItems = enriched.concat(carriedOver);
-        if (maxCount > 0) outputHistory[output.id] = finalItems;
+        if (keepPrevious && maxCount > 0) outputHistory[output.id] = finalItems;
+        else delete outputHistory[output.id];
         numberedConfigs = await numberAndTagFinal(finalItems, remarkBase, numberingStyle);
 
         if (output.format === 'txt') {
@@ -1213,21 +1225,23 @@ async function processConfigs(config) {
         }
       } else if (output.format === 'socks5' || output.format === 'http') {
         const raw = await getGroupConfigs(output.group, output.format);
-        const { toEnrich, carriedOver } = selectForOutput(output.id, raw, plainIdentityKey, 'plain', maxCount);
+        const { toEnrich, carriedOver } = selectForOutput(output.id, raw, plainIdentityKey, 'plain', maxCount, keepPrevious);
         if (output.skipGeo) console.log(`   ⏭️  [${output.id}] تشخیص لوکیشن برای این خروجی غیرفعاله، رد شد`);
         const enriched = output.skipGeo ? enrichWithoutGeo(toEnrich) : await enrichWithGeo(toEnrich, output.id);
         const finalItems = enriched.concat(carriedOver);
-        if (maxCount > 0) outputHistory[output.id] = finalItems;
+        if (keepPrevious && maxCount > 0) outputHistory[output.id] = finalItems;
+        else delete outputHistory[output.id];
         numberedConfigs = await numberAndTagFinal(finalItems, remarkBase, numberingStyle);
         content = buildPlainProxyList(numberedConfigs);
       } else {
         // خروجی‌های پیشرفته
         const raw = await getGroupConfigs(output.group, 'vpn');
-        const { toEnrich, carriedOver } = selectForOutput(output.id, raw, vpnIdentityKey, 'vpn', maxCount);
+        const { toEnrich, carriedOver } = selectForOutput(output.id, raw, vpnIdentityKey, 'vpn', maxCount, keepPrevious);
         if (output.skipGeo) console.log(`   ⏭️  [${output.id}] تشخیص لوکیشن برای این خروجی غیرفعاله، رد شد`);
         const enriched = output.skipGeo ? enrichWithoutGeo(toEnrich) : await enrichWithGeo(toEnrich, output.id);
         const finalItems = enriched.concat(carriedOver);
-        if (maxCount > 0) outputHistory[output.id] = finalItems;
+        if (keepPrevious && maxCount > 0) outputHistory[output.id] = finalItems;
+        else delete outputHistory[output.id];
         numberedConfigs = await numberAndTagFinal(finalItems, remarkBase, numberingStyle);
 
         if (output.format === 'xray-lb') content = buildXrayLoadBalanced(numberedConfigs, remarkBase);
