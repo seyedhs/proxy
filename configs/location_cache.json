@@ -1,21 +1,5 @@
 {
-  "lat2.freeinternat.com": [
-    "🇱🇻",
-    "Latvia"
-  ],
-  "43.207.162.145": [
-    "🇯🇵",
-    "Japan"
-  ],
-  "82.152.220.141": [
-    "🇬🇧",
-    "United Kingdom"
-  ],
-  "18.179.7.11": [
-    "🇯🇵",
-    "Japan"
-  ],
-  "213.130.137.180": [
+  "45.33.107.237": [
     "🇺🇸",
     "United States"
   ],
@@ -23,79 +7,83 @@
     "🇱🇹",
     "Lithuania"
   ],
-  "82.152.220.41": [
+  "app4.goonars.com": [
+    "🇩🇪",
+    "Germany"
+  ],
+  "169.40.42.232": [
+    "🇺🇸",
+    "United States"
+  ],
+  "74.207.245.124": [
+    "🇺🇸",
+    "United States"
+  ],
+  "82.152.220.31": [
     "🇬🇧",
     "United Kingdom"
   ],
-  "18.183.215.124": [
-    "🇯🇵",
-    "Japan"
-  ],
-  "177.3.213.112": [
-    "🇺🇸",
-    "United States"
-  ],
-  "81.90.17.117": [
-    "🇵🇱",
-    "Poland"
-  ],
-  "45.90.58.216": [
-    "🇨🇭",
-    "Switzerland"
-  ],
-  "82.152.220.161": [
-    "🇬🇧",
-    "United Kingdom"
-  ],
-  "88.216.68.68": [
-    "🇺🇸",
-    "United States"
-  ],
-  "3.113.9.16": [
-    "🇯🇵",
-    "Japan"
-  ],
-  "pl1.cnyvpn.com": [
-    "🇵🇱",
-    "Poland"
-  ],
-  "185.174.135.28": [
-    "🇪🇪",
-    "Estonia"
-  ],
-  "172.235.43.210": [
-    "🇺🇸",
-    "United States"
+  "95.85.228.30": [
+    "🇳🇱",
+    "The Netherlands"
   ],
   "213.130.137.10": [
     "🇺🇸",
     "United States"
   ],
-  "213.130.137.130": [
+  "app1.goonars.com": [
+    "🇳🇱",
+    "The Netherlands"
+  ],
+  "31.76.62.223": [
+    "🇱🇻",
+    "Latvia"
+  ],
+  "maple.adaspoloandco.com": [
+    "🇨🇦",
+    "Canada"
+  ],
+  "82.152.220.161": [
+    "🇬🇧",
+    "United Kingdom"
+  ],
+  "193.29.139.212": [
+    "🇳🇱",
+    "The Netherlands"
+  ],
+  "169.40.42.179": [
     "🇺🇸",
     "United States"
   ],
-  "213.130.137.60": [
-    "🇺🇸",
-    "United States"
+  "132.243.235.53": [
+    "🇳🇱",
+    "The Netherlands"
   ],
-  "213.130.137.100": [
-    "🇺🇸",
-    "United States"
+  "nl1.cnyvpn.com": [
+    "🇳🇱",
+    "The Netherlands"
   ],
-  "213.130.137.110": [
-    "🇺🇸",
-    "United States"
+  "82.152.220.81": [
+    "🇬🇧",
+    "United Kingdom"
   ],
-  "194.61.121.93": [
-    "🇵🇱",
-    "Poland"
-  ],
-  "169.40.42.173": [
-    "🇺🇸",
-    "United States"
+  "82.152.220.141": [
+    "🇬🇧",
+    "United Kingdom"
   ],
   "app2.goonars.com": [
+    "🇳🇱",
+    "The Netherlands"
+  ],
+  "213.130.137.30": [
+    "🇺🇸",
+    "United States"
+  ],
+  "88.216.190.206": [
+    "🇩🇪",
+    "Germany"
+  ],
+  "217.60.23.218": [
     "🇳🇱",
     "The Netherlands"
   ],
@@ -103,131 +91,55 @@
     "🇩🇪",
     "Germany"
   ],
-  "82.152.220.121": [
-    "🇬🇧",
-    "United Kingdom"
-  ],
-  "82.152.220.81": [
-    "🇬🇧",
-    "United Kingdom"
-  ],
-  "82.198.246.233": [
-    "🇺🇸",
-    "United States"
-  ],
-  "alblack.vodniki.monster": [
-    "🇦🇱",
-    "Albania"
-  ],
-  "node-uk.connectsuite.org": [
-    "🇬🇧",
-    "United Kingdom"
-  ],
-  "45.155.52.231": [
-    "🇷🇺",
-    "Russia"
-  ],
-  "213.130.137.190": [
-    "🇺🇸",
-    "United States"
-  ],
-  "45.33.107.237": [
-    "🇺🇸",
-    "United States"
-  ],
-  "213.130.137.70": [
-    "🇺🇸",
-    "United States"
-  ],
-  "213.130.137.80": [
-    "🇺🇸",
-    "United States"
-  ],
-  "31.76.80.69": [
-    "🇫🇮",
-    "Finland"
-  ],
-  "213.130.137.20": [
-    "🇺🇸",
-    "United States"
-  ],
-  "95.85.228.30": [
-    "🇳🇱",
-    "The Netherlands"
-  ],
-  "maple.adaspoloandco.com": [
-    "🇨🇦",
-    "Canada"
-  ],
-  "74.207.245.124": [
-    "🇺🇸",
-    "United States"
-  ],
-  "82.152.220.131": [
-    "🇬🇧",
-    "United Kingdom"
-  ],
-  "84.32.102.168": [
-    "🇳🇱",
-    "The Netherlands"
-  ],
-  "169.40.42.232": [
-    "🇺🇸",
-    "United States"
-  ],
-  "82.152.220.21": [
-    "🇬🇧",
-    "United Kingdom"
-  ],
-  "52.68.64.80": [
-    "🇯🇵",
-    "Japan"
-  ],
-  "magazin6.mervi.icu": [
-    "🇵🇱",
-    "Poland"
-  ],
-  "82.152.220.71": [
-    "🇬🇧",
-    "United Kingdom"
-  ],
-  "app1.goonars.com": [
-    "🇳🇱",
-    "The Netherlands"
-  ],
-  "15.204.97.197": [
-    "🇺🇸",
-    "United States"
-  ],
-  "lt.superbuba.top": [
-    "🇱🇹",
-    "Lithuania"
-  ],
   "104.16.174.117": [
     "🇨🇦",
     "Canada"
+  ],
+  "15.204.97.206": [
+    "🇺🇸",
+    "United States"
+  ],
+  "lat2.freeinternat.com": [
+    "🇱🇻",
+    "Latvia"
+  ],
+  "150.241.73.194": [
+    "🇮🇹",
+    "Italy"
+  ],
+  "167.104.223.29": [
+    "🇬🇧",
+    "United Kingdom"
+  ],
+  "82.152.220.91": [
+    "🇬🇧",
+    "United Kingdom"
   ],
   "213.130.137.150": [
     "🇺🇸",
     "United States"
   ],
-  "mold2.freeinternat.com": [
-    "🇲🇩",
-    "Moldova"
-  ],
-  "82.152.220.111": [
-    "🇬🇧",
-    "United Kingdom"
-  ],
-  "app26.jarvestip.ru": [
-    "🇳🇱",
-    "The Netherlands"
-  ],
   "82.152.220.51": [
     "🇬🇧",
     "United Kingdom"
   ],
-  "public-auth.savesafe.cc": [
+  "82.152.220.61": [
+    "🇬🇧",
+    "United Kingdom"
+  ],
+  "169.40.42.184": [
+    "🇺🇸",
+    "United States"
+  ],
+  "51.158.241.182": [
+    "🇳🇱",
+    "The Netherlands"
+  ],
+  "213.130.137.60": [
+    "🇺🇸",
+    "United States"
+  ],
+  "82.152.220.151": [
     "🇬🇧",
     "United Kingdom"
   ],
@@ -235,7 +147,199 @@
     "🇬🇧",
     "United Kingdom"
   ],
-  "cdn705j38hd423.rucdn.pro": [
+  "147.45.111.103": [
+    "🇳🇱",
+    "The Netherlands"
+  ],
+  "chat.openai.com": [
+    "🇨🇦",
+    "Canada"
+  ],
+  "83.147.18.3": [
+    "🇬🇧",
+    "United Kingdom"
+  ],
+  "172.235.43.210": [
+    "🇺🇸",
+    "United States"
+  ],
+  "213.130.137.190": [
+    "🇺🇸",
+    "United States"
+  ],
+  "82.198.246.233": [
+    "🇺🇸",
+    "United States"
+  ],
+  "15.204.246.111": [
+    "🇺🇸",
+    "United States"
+  ],
+  "app23.jarvestip.ru": [
+    "🇳🇱",
+    "The Netherlands"
+  ],
+  "213.130.137.160": [
+    "🇺🇸",
+    "United States"
+  ],
+  "169.40.42.15": [
+    "🇺🇸",
+    "United States"
+  ],
+  "165.140.216.141": [
+    "🇺🇸",
+    "United States"
+  ],
+  "sanpa-meow.nethcloud.top": [
+    "🇧🇷",
+    "Brazil"
+  ],
+  "213.130.137.20": [
+    "🇺🇸",
+    "United States"
+  ],
+  "213.130.137.50": [
+    "🇺🇸",
+    "United States"
+  ],
+  "82.152.220.131": [
+    "🇬🇧",
+    "United Kingdom"
+  ],
+  "15.204.97.197": [
+    "🇺🇸",
+    "United States"
+  ],
+  "213.130.137.180": [
+    "🇺🇸",
+    "United States"
+  ],
+  "82.152.220.71": [
+    "🇬🇧",
+    "United Kingdom"
+  ],
+  "132.243.65.170": [
+    "🇪🇪",
+    "Estonia"
+  ],
+  "public-auth.savesafe.cc": [
+    "🇬🇧",
+    "United Kingdom"
+  ],
+  "213.130.137.130": [
+    "🇺🇸",
+    "United States"
+  ],
+  "104.16.174.36": [
+    "🇨🇦",
+    "Canada"
+  ],
+  "fast.iqiraq.shop": [
+    "🇩🇪",
+    "Germany"
+  ],
+  "91.107.188.158": [
+    "🇩🇪",
+    "Germany"
+  ],
+  "104.105.28.51": [
+    "🇩🇪",
+    "Germany"
+  ],
+  "169.40.42.173": [
+    "🇺🇸",
+    "United States"
+  ],
+  "213.130.137.100": [
+    "🇺🇸",
+    "United States"
+  ],
+  "82.152.220.101": [
+    "🇬🇧",
+    "United Kingdom"
+  ],
+  "91.107.190.175": [
+    "🇩🇪",
+    "Germany"
+  ],
+  "91.107.154.19": [
+    "🇩🇪",
+    "Germany"
+  ],
+  "213.130.137.40": [
+    "🇺🇸",
+    "United States"
+  ],
+  "magazin6.mervi.icu": [
+    "🇵🇱",
+    "Poland"
+  ],
+  "51.158.236.122": [
+    "🇳🇱",
+    "The Netherlands"
+  ],
+  "213.130.137.120": [
+    "🇺🇸",
+    "United States"
+  ],
+  "147.45.116.52": [
+    "🇧🇷",
+    "Brazil"
+  ],
+  "81.90.17.117": [
+    "🇵🇱",
+    "Poland"
+  ],
+  "188.114.98.0": [
+    "🇨🇦",
+    "Canada"
+  ],
+  "213.130.137.170": [
+    "🇺🇸",
+    "United States"
+  ],
+  "213.130.137.200": [
+    "🇺🇸",
+    "United States"
+  ],
+  "45.90.58.216": [
+    "🇨🇭",
+    "Switzerland"
+  ],
+  "172.64.152.23": [
+    "🇨🇦",
+    "Canada"
+  ],
+  "213.130.137.80": [
+    "🇺🇸",
+    "United States"
+  ],
+  "milan.adaspoloandco.com": [
+    "🇮🇹",
+    "Italy"
+  ],
+  "82.152.223.130": [
+    "🇬🇧",
+    "United Kingdom"
+  ],
+  "51.158.238.49": [
+    "🇳🇱",
+    "The Netherlands"
+  ],
+  "yt-ads.adsmoba.com": [
+    "🇷🇺",
+    "Russia"
+  ],
+  "51.15.56.211": [
+    "🇳🇱",
+    "The Netherlands"
+  ],
+  "82.152.220.111": [
+    "🇬🇧",
+    "United Kingdom"
+  ],
+  "194.48.250.31": [
     "🇩🇪",
     "Germany"
   ],
@@ -243,79 +347,11 @@
     "🇬🇧",
     "United Kingdom"
   ],
-  "91.107.188.158": [
-    "🇩🇪",
-    "Germany"
-  ],
-  "13.114.124.85": [
-    "🇯🇵",
-    "Japan"
-  ],
-  "82.152.220.31": [
-    "🇬🇧",
-    "United Kingdom"
-  ],
-  "213.130.137.40": [
+  "213.130.137.70": [
     "🇺🇸",
     "United States"
   ],
-  "213.130.137.30": [
-    "🇺🇸",
-    "United States"
-  ],
-  "147.45.111.103": [
-    "🇳🇱",
-    "The Netherlands"
-  ],
-  "35.77.87.249": [
-    "🇯🇵",
-    "Japan"
-  ],
-  "169.40.42.179": [
-    "🇺🇸",
-    "United States"
-  ],
-  "151.244.237.100": [
-    "🇵🇱",
-    "Poland"
-  ],
-  "91.107.190.175": [
-    "🇩🇪",
-    "Germany"
-  ],
-  "82.152.220.61": [
-    "🇬🇧",
-    "United Kingdom"
-  ],
-  "104.105.28.51": [
-    "🇩🇪",
-    "Germany"
-  ],
-  "45.89.60.235": [
-    "🇦🇱",
-    "Albania"
-  ],
-  "143.246.223.73": [
-    "🇲🇩",
-    "Moldova"
-  ],
-  "169.40.42.15": [
-    "🇺🇸",
-    "United States"
-  ],
-  "15.204.97.206": [
-    "🇺🇸",
-    "United States"
-  ],
-  "fast.iqiraq.shop": [
-    "🇩🇪",
-    "Germany"
-  ],
-  "15.204.246.111": [
-    "🇺🇸",
-    "United States"
-  ],
-  "169.40.42.184": [
+  "213.130.137.140": [
     "🇺🇸",
     "United States"
   ],
@@ -323,80 +359,44 @@
     "🇨🇦",
     "Canada"
   ],
-  "app23.jarvestip.ru": [
-    "🇳🇱",
-    "The Netherlands"
-  ],
-  "217.60.23.218": [
-    "🇳🇱",
-    "The Netherlands"
-  ],
-  "82.152.220.101": [
+  "82.152.220.21": [
     "🇬🇧",
     "United Kingdom"
   ],
-  "104.16.174.22": [
+  "172.67.217.240": [
     "🇨🇦",
     "Canada"
   ],
-  "150.241.73.194": [
-    "🇸🇪",
-    "Sweden"
-  ],
-  "185.121.179.114": [
-    "🇳🇱",
-    "The Netherlands"
-  ],
-  "213.130.137.170": [
-    "🇫🇷",
-    "France"
-  ],
-  "82.152.220.151": [
+  "82.152.220.41": [
     "🇬🇧",
     "United Kingdom"
   ],
-  "chopin.adaspoloandco.com": [
-    "🇵🇱",
-    "Poland"
+  "82.152.220.121": [
+    "🇬🇧",
+    "United Kingdom"
   ],
-  "193.29.139.212": [
-    "🇳🇱",
-    "The Netherlands"
+  "213.130.137.90": [
+    "🇺🇸",
+    "United States"
   ],
-  "sanpa-meow.nethcloud.top": [
-    "🇧🇷",
-    "Brazil"
+  "213.130.137.110": [
+    "🇺🇸",
+    "United States"
   ],
-  "213.130.137.50": [
-    "🇫🇷",
-    "France"
+  "mute-dust-f0c4.456-8ae.workers.dev": [
+    "🇨🇦",
+    "Canada"
   ],
   "167.104.223.179": [
     "🇬🇧",
     "United Kingdom"
   ],
-  "213.130.137.140": [
-    "🇫🇷",
-    "France"
-  ],
-  "3.114.220.22": [
-    "🇯🇵",
-    "Japan"
-  ],
-  "91.107.154.19": [
-    "🇩🇪",
-    "Germany"
-  ],
-  "82.152.220.91": [
-    "🇬🇧",
-    "United Kingdom"
+  "182.16.61.2": [
+    "🇭🇰",
+    "Hong Kong"
   ],
   "194.87.47.204": [
     "🇮🇹",
     "Italy"
-  ],
-  "51.15.56.211": [
-    "🇳🇱",
-    "The Netherlands"
   ]
 }
