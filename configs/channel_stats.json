@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-08T12:00:43.977209+00:00",
+  "timestamp": "2026-09-08T18:00:47.865692+00:00",
   "channels": [
     {
       "url": "https://raw.githubusercontent.com/inaz266/In-az-26/refs/heads/main/filtee.txt",
@@ -7,12 +7,12 @@
       "metrics": {
         "total_configs": 451,
         "valid_configs": 296,
-        "unique_configs": 225,
-        "avg_response_time": 0.46,
+        "unique_configs": 223,
+        "avg_response_time": 0.25,
         "success_count": 1,
         "fail_count": 0,
-        "overall_score": 84.73,
-        "last_success": "2026-09-08T12:00:43.913099+00:00",
+        "overall_score": 84.87,
+        "last_success": "2026-09-08T18:00:47.864089+00:00",
         "protocol_counts": {
           "wireguard://": 0,
           "hysteria2://": 2,
@@ -28,37 +28,37 @@
       "url": "https://raw.githubusercontent.com/patterniha/Free-Configs/main/configs.txt",
       "enabled": true,
       "metrics": {
-        "total_configs": 33,
-        "valid_configs": 22,
-        "unique_configs": 8,
-        "avg_response_time": 0.32,
+        "total_configs": 23,
+        "valid_configs": 15,
+        "unique_configs": 9,
+        "avg_response_time": 0.1,
         "success_count": 1,
         "fail_count": 0,
-        "overall_score": 75.27,
-        "last_success": "2026-09-08T12:00:43.761064+00:00",
+        "overall_score": 81.15,
+        "last_success": "2026-09-08T18:00:47.703655+00:00",
         "protocol_counts": {
           "wireguard://": 0,
           "hysteria2://": 0,
-          "vless://": 12,
+          "vless://": 11,
           "vmess://": 0,
           "ss://": 0,
-          "trojan://": 10,
+          "trojan://": 4,
           "tuic://": 0
         }
       }
     },
     {
       "url": "https://raw.githubusercontent.com/luxxuria/harvester/main/speed_tested.txt",
-      "enabled": false,
+      "enabled": true,
       "metrics": {
-        "total_configs": 68,
+        "total_configs": 82,
         "valid_configs": 2,
-        "unique_configs": 0,
-        "avg_response_time": 0,
-        "success_count": 0,
-        "fail_count": 1,
-        "overall_score": 15.74,
-        "last_success": null,
+        "unique_configs": 2,
+        "avg_response_time": 0.2,
+        "success_count": 1,
+        "fail_count": 0,
+        "overall_score": 75.31,
+        "last_success": "2026-09-08T18:00:47.801272+00:00",
         "protocol_counts": {
           "wireguard://": 0,
           "hysteria2://": 0,
