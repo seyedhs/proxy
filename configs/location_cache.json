@@ -1,5 +1,89 @@
 {
+  "130.78.191.25": [
+    "🇮🇹",
+    "Italy"
+  ],
+  "47.253.226.114": [
+    "🇺🇸",
+    "United States"
+  ],
+  "kama1.api3-max.ru": [
+    "🇫🇷",
+    "France"
+  ],
+  "51.79.85.185": [
+    "🇨🇦",
+    "Canada"
+  ],
+  "144.124.252.13": [
+    "🇳🇱",
+    "The Netherlands"
+  ],
   "169.40.42.133": [
+    "🇺🇸",
+    "United States"
+  ],
+  "15.204.97.195": [
+    "🇺🇸",
+    "United States"
+  ],
+  "15.204.97.197": [
+    "🇺🇸",
+    "United States"
+  ],
+  "153.75.89.137": [
+    "🇳🇱",
+    "The Netherlands"
+  ],
+  "82.39.171.12": [
+    "🇬🇧",
+    "United Kingdom"
+  ],
+  "77.91.68.70": [
+    "🇦🇲",
+    "Armenia"
+  ],
+  "render.com": [
+    "🇺🇸",
+    "United States"
+  ],
+  "169.40.42.52": [
+    "🇺🇸",
+    "United States"
+  ],
+  "89.124.85.87": [
+    "🇳🇱",
+    "The Netherlands"
+  ],
+  "5.253.42.164": [
+    "🇮🇳",
+    "India"
+  ],
+  "169.40.42.16": [
+    "🇺🇸",
+    "United States"
+  ],
+  "austria-3.moritech.net": [
+    "🇦🇹",
+    "Austria"
+  ],
+  "86.54.28.75": [
+    "🇳🇱",
+    "The Netherlands"
+  ],
+  "109.248.170.119": [
+    "🇰🇿",
+    "Kazakhstan"
+  ],
+  "thumbs.medic-ml.ru": [
+    "🇳🇱",
+    "The Netherlands"
+  ],
+  "151.101.56.101": [
+    "🇺🇸",
+    "United States"
+  ],
+  "199.232.78.160": [
     "🇺🇸",
     "United States"
   ],
@@ -7,109 +91,73 @@
     "🇺🇸",
     "United States"
   ],
-  "usa.demka.live": [
-    "🇺🇸",
-    "United States"
+  "87.199.208.136": [
+    "🇳🇱",
+    "The Netherlands"
   ],
-  "156.245.232.239": [
+  "193.134.209.62": [
     "🇭🇰",
     "Hong Kong"
-  ],
-  "188.42.145.180": [
-    "🇳🇱",
-    "The Netherlands"
-  ],
-  "15.204.97.195": [
-    "🇺🇸",
-    "United States"
-  ],
-  "188.225.45.152": [
-    "🇷🇺",
-    "Russia"
-  ],
-  "200.165.235.78": [
-    "🇸🇨",
-    "Seychelles"
-  ],
-  "switcher-nick-croquet.freesocks.work": [
-    "🇳🇱",
-    "The Netherlands"
-  ],
-  "3.9.135.156": [
-    "🇬🇧",
-    "United Kingdom"
-  ],
-  "185.154.193.137": [
-    "🇷🇺",
-    "Russia"
   ],
   "vj37-1936vtw.fincore.top": [
     "🇭🇰",
     "Hong Kong"
   ],
-  "datpol.2clash.ru": [
-    "🇺🇸",
-    "United States"
-  ],
-  "109.248.170.119": [
-    "🇰🇿",
-    "Kazakhstan"
-  ],
-  "render.com": [
-    "🇺🇸",
-    "United States"
-  ],
-  "169.40.42.16": [
-    "🇺🇸",
-    "United States"
-  ],
-  "162.248.166.35": [
+  "81.90.25.123": [
     "🇩🇪",
     "Germany"
-  ],
-  "79.137.192.241": [
-    "🇷🇺",
-    "Russia"
-  ],
-  "31.77.144.220": [
-    "🇸🇪",
-    "Sweden"
   ],
   "150.241.72.76": [
     "🇦🇹",
     "Austria"
   ],
-  "212.87.223.71": [
+  "188.42.145.180": [
     "🇳🇱",
     "The Netherlands"
   ],
-  "89.124.85.87": [
-    "🇳🇱",
-    "The Netherlands"
-  ],
-  "87.199.208.136": [
-    "🇳🇱",
-    "The Netherlands"
-  ],
-  "swe.demka.live": [
-    "🇳🇱",
-    "The Netherlands"
-  ],
-  "169.40.42.225": [
+  "169.40.42.212": [
     "🇺🇸",
     "United States"
-  ],
-  "5.253.42.164": [
-    "🇮🇳",
-    "India"
   ],
   "45.144.137.129": [
     "🇭🇰",
     "Hong Kong"
   ],
-  "169.40.42.212": [
+  "89.125.147.199": [
+    "🇳🇱",
+    "The Netherlands"
+  ],
+  "172.67.149.60": [
+    "🇨🇦",
+    "Canada"
+  ],
+  "31.77.144.220": [
+    "🇸🇪",
+    "Sweden"
+  ],
+  "199.232.78.101": [
     "🇺🇸",
     "United States"
+  ],
+  "2.kiska.lol": [
+    "🇩🇪",
+    "Germany"
+  ],
+  "162.248.166.35": [
+    "🇩🇪",
+    "Germany"
+  ],
+  "169.40.42.225": [
+    "🇺🇸",
+    "United States"
+  ],
+  "89.124.120.136": [
+    "🇳🇱",
+    "The Netherlands"
+  ],
+  "118.193.57.167": [
+    "🇹🇭",
+    "Thailand"
   ],
   "45.152.64.9": [
     "🇭🇰",
@@ -119,71 +167,27 @@
     "🇺🇸",
     "United States"
   ],
-  "47.79.32.249": [
-    "🇯🇵",
-    "Japan"
-  ],
-  "118.193.57.167": [
-    "🇹🇭",
-    "Thailand"
-  ],
-  "lond.2clash.ru": [
+  "posa8.api3-max.ru": [
     "🇬🇧",
     "United Kingdom"
   ],
-  "86.54.28.75": [
+  "170.168.97.8": [
+    "🇪🇸",
+    "Spain"
+  ],
+  "79.137.192.241": [
+    "🇷🇺",
+    "Russia"
+  ],
+  "51.195.126.38": [
+    "🇩🇪",
+    "Germany"
+  ],
+  "89.124.92.66": [
     "🇳🇱",
     "The Netherlands"
   ],
-  "193.134.209.62": [
-    "🇭🇰",
-    "Hong Kong"
-  ],
-  "77.91.68.70": [
-    "🇦🇲",
-    "Armenia"
-  ],
-  "ww11.levikogjgfdd.ir": [
-    "🇸🇬",
-    "Singapore"
-  ],
-  "mil.2clash.ru": [
-    "🇮🇹",
-    "Italy"
-  ],
-  "89.125.147.199": [
-    "🇳🇱",
-    "The Netherlands"
-  ],
-  "austria-3.moritech.net": [
-    "🇦🇹",
-    "Austria"
-  ],
-  "47.253.226.114": [
-    "🇺🇸",
-    "United States"
-  ],
-  "199.232.78.160": [
-    "🇺🇸",
-    "United States"
-  ],
-  "82.39.171.12": [
-    "🇬🇧",
-    "United Kingdom"
-  ],
-  "15.204.97.197": [
-    "🇺🇸",
-    "United States"
-  ],
-  "thumbs.medic-ml.ru": [
-    "🇳🇱",
-    "The Netherlands"
-  ],
-  "199.232.78.101": [
-    "🇺🇸",
-    "United States"
-  ],
-  "172.67.149.60": [
+  "15.235.75.71": [
     "🇨🇦",
     "Canada"
   ],
@@ -191,72 +195,28 @@
     "🇨🇦",
     "Canada"
   ],
-  "nethgio.2clash.ru": [
-    "🇮🇹",
-    "Italy"
+  "185.47.254.251": [
+    "🇬🇹",
+    "Guatemala"
   ],
-  "144.124.252.13": [
+  "switcher-nick-croquet.freesocks.work": [
     "🇳🇱",
     "The Netherlands"
   ],
-  "posa9.api3-max.ru": [
+  "3.9.135.156": [
     "🇬🇧",
     "United Kingdom"
   ],
-  "188.225.27.78": [
-    "🇷🇺",
-    "Russia"
+  "156.245.232.239": [
+    "🇭🇰",
+    "Hong Kong"
   ],
-  "188.114.97.6": [
-    "🇨🇦",
-    "Canada"
+  "47.79.32.249": [
+    "🇯🇵",
+    "Japan"
   ],
-  "media-dan1.team-pluss.ir": [
-    "🇩🇪",
-    "Germany"
-  ],
-  "81.90.25.123": [
-    "🇩🇪",
-    "Germany"
-  ],
-  "2.kiska.lol": [
-    "🇩🇪",
-    "Germany"
-  ],
-  "89.124.120.136": [
-    "🇳🇱",
-    "The Netherlands"
-  ],
-  "89.124.92.66": [
-    "🇳🇱",
-    "The Netherlands"
-  ],
-  "upload.tbotapi.ru": [
-    "🇺🇸",
-    "United States"
-  ],
-  "posa8.api3-max.ru": [
-    "🇬🇧",
-    "United Kingdom"
-  ],
-  "151.101.56.101": [
-    "🇺🇸",
-    "United States"
-  ],
-  "51.79.85.185": [
-    "🇨🇦",
-    "Canada"
-  ],
-  "130.78.191.25": [
-    "🇮🇹",
-    "Italy"
-  ],
-  "kama1.api3-max.ru": [
-    "🇫🇷",
-    "France"
-  ],
-  "169.40.42.52": [
-    "🇺🇸",
-    "United States"
+  "ww11.levikogjgfdd.ir": [
+    "🇸🇬",
+    "Singapore"
   ]
 }
