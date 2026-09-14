@@ -40,31 +40,31 @@
     <text x="400" y="45" text-anchor="middle" class="title">Channel Performance Overview</text>
         <rect x="150" y="80" width="500" height="30" fill="#1e293b" rx="6"/>
         <clipPath id="clip-0">
-            <rect x="150" y="80" width="443.6" height="30" rx="6"/>
+            <rect x="150" y="80" width="440.90000000000003" height="30" rx="6"/>
         </clipPath>
-        <rect x="150" y="80" width="443.6" height="30" fill="url(#grad-green)" rx="6"/>
+        <rect x="150" y="80" width="440.90000000000003" height="30" fill="url(#grad-green)" rx="6"/>
         <g clip-path="url(#clip-0)">
             <rect x="150" y="80" width="100%" height="30" fill="url(#shimmer)" class="shimmer-rect"/>
         </g>
         <text x="135" y="100" text-anchor="end" class="row">filtee.txt</text>
-        <text x="665" y="100" text-anchor="start" class="score">88.7% (S:100%)</text>
+        <text x="665" y="100" text-anchor="start" class="score">88.2% (S:100%)</text>
         <rect x="150" y="130" width="500" height="30" fill="#1e293b" rx="6"/>
         <clipPath id="clip-1">
-            <rect x="150" y="130" width="418.25" height="30" rx="6"/>
+            <rect x="150" y="130" width="416.15000000000003" height="30" rx="6"/>
         </clipPath>
-        <rect x="150" y="130" width="418.25" height="30" fill="url(#grad-green)" rx="6"/>
+        <rect x="150" y="130" width="416.15000000000003" height="30" fill="url(#grad-green)" rx="6"/>
         <g clip-path="url(#clip-1)">
             <rect x="150" y="130" width="100%" height="30" fill="url(#shimmer)" class="shimmer-rect"/>
         </g>
         <text x="135" y="150" text-anchor="end" class="row">configs.txt</text>
-        <text x="665" y="150" text-anchor="start" class="score">83.7% (S:100%)</text>
+        <text x="665" y="150" text-anchor="start" class="score">83.2% (S:100%)</text>
         <rect x="150" y="180" width="500" height="30" fill="#1e293b" rx="6"/>
         <clipPath id="clip-2">
-            <rect x="150" y="180" width="309.40000000000003" height="30" rx="6"/>
+            <rect x="150" y="180" width="363.75" height="30" rx="6"/>
         </clipPath>
-        <rect x="150" y="180" width="309.40000000000003" height="30" fill="url(#grad-yellow)" rx="6"/>
+        <rect x="150" y="180" width="363.75" height="30" fill="url(#grad-green)" rx="6"/>
         <g clip-path="url(#clip-2)">
             <rect x="150" y="180" width="100%" height="30" fill="url(#shimmer)" class="shimmer-rect"/>
         </g>
         <text x="135" y="200" text-anchor="end" class="row">speed_tested.txt</text>
-        <text x="665" y="200" text-anchor="start" class="score">61.9% (S:100%)</text></svg>
+        <text x="665" y="200" text-anchor="start" class="score">72.8% (S:100%)</text></svg>
