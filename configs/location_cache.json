@@ -1,27 +1,7 @@
 {
-  "104.16.10.2": [
-    "🇨🇦",
-    "Canada"
-  ],
-  "188.114.97.6": [
-    "🇨🇦",
-    "Canada"
-  ],
-  "4.221.224.246": [
-    "🇿🇦",
-    "South Africa"
-  ],
-  "www.speedtest.net": [
-    "🇨🇦",
-    "Canada"
-  ],
-  "grimness-backlogs.cdn-content.com": [
-    "🇺🇸",
-    "United States"
-  ],
-  "104.18.26.90": [
-    "🇨🇦",
-    "Canada"
+  "185.138.90.95": [
+    "🇵🇱",
+    "Poland"
   ],
   "adheres-scruple.quick-cdn.net": [
     "🇺🇸",
@@ -31,12 +11,36 @@
     "🇫🇮",
     "Finland"
   ],
-  "131.123.34.145": [
-    "🇨🇭",
-    "Switzerland"
+  "render.com": [
+    "🇺🇸",
+    "United States"
   ],
   "bounded-crammed.video-streams.org": [
     "🇺🇸",
     "United States"
+  ],
+  "grimness-backlogs.cdn-content.com": [
+    "🇺🇸",
+    "United States"
+  ],
+  "104.18.26.90": [
+    "🇨🇦",
+    "Canada"
+  ],
+  "104.16.10.2": [
+    "🇨🇦",
+    "Canada"
+  ],
+  "www.speedtest.net": [
+    "🇨🇦",
+    "Canada"
+  ],
+  "131.123.34.145": [
+    "🇨🇭",
+    "Switzerland"
+  ],
+  "188.114.97.6": [
+    "🇨🇦",
+    "Canada"
   ]
 }
