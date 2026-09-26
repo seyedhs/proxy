@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-25T18:00:54.128237+00:00",
+  "timestamp": "2026-09-26T00:00:47.459354+00:00",
   "channels": [
     {
       "url": "https://raw.githubusercontent.com/inaz266/In-az-26/refs/heads/main/filtee.txt",
@@ -7,12 +7,12 @@
       "metrics": {
         "total_configs": 178,
         "valid_configs": 144,
-        "unique_configs": 125,
-        "avg_response_time": 0.15,
+        "unique_configs": 122,
+        "avg_response_time": 0.1,
         "success_count": 1,
         "fail_count": 0,
-        "overall_score": 91.69,
-        "last_success": "2026-09-25T18:00:54.123133+00:00",
+        "overall_score": 91.26,
+        "last_success": "2026-09-26T00:00:47.456491+00:00",
         "protocol_counts": {
           "wireguard://": 0,
           "hysteria2://": 1,
@@ -30,12 +30,12 @@
       "metrics": {
         "total_configs": 15,
         "valid_configs": 9,
-        "unique_configs": 2,
-        "avg_response_time": 0.16,
+        "unique_configs": 5,
+        "avg_response_time": 0.04,
         "success_count": 1,
         "fail_count": 0,
-        "overall_score": 70.31,
-        "last_success": "2026-09-25T18:00:54.127406+00:00",
+        "overall_score": 78.82,
+        "last_success": "2026-09-26T00:00:47.397939+00:00",
         "protocol_counts": {
           "wireguard://": 0,
           "hysteria2://": 0,
@@ -54,11 +54,11 @@
         "total_configs": 33,
         "valid_configs": 1,
         "unique_configs": 1,
-        "avg_response_time": 0.13,
+        "avg_response_time": 0.1,
         "success_count": 1,
         "fail_count": 0,
-        "overall_score": 75.56,
-        "last_success": "2026-09-25T18:00:54.106916+00:00",
+        "overall_score": 75.6,
+        "last_success": "2026-09-26T00:00:47.458429+00:00",
         "protocol_counts": {
           "wireguard://": 0,
           "hysteria2://": 0,
