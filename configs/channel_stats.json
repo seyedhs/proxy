@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-30T10:59:25.024841+00:00",
+  "timestamp": "2026-09-30T12:01:02.373527+00:00",
   "channels": [
     {
       "url": "https://raw.githubusercontent.com/inaz266/In-az-26/refs/heads/main/filtee.txt",
@@ -8,11 +8,11 @@
         "total_configs": 90,
         "valid_configs": 78,
         "unique_configs": 41,
-        "avg_response_time": 0.12,
+        "avg_response_time": 0.1,
         "success_count": 1,
         "fail_count": 0,
-        "overall_score": 84.63,
-        "last_success": "2026-09-30T10:59:24.834023+00:00",
+        "overall_score": 84.66,
+        "last_success": "2026-09-30T12:01:02.372204+00:00",
         "protocol_counts": {
           "wireguard://": 0,
           "hysteria2://": 0,
@@ -31,11 +31,11 @@
         "total_configs": 118,
         "valid_configs": 39,
         "unique_configs": 16,
-        "avg_response_time": 0.13,
+        "avg_response_time": 0.08,
         "success_count": 1,
         "fail_count": 0,
-        "overall_score": 68.33,
-        "last_success": "2026-09-30T10:59:24.839593+00:00",
+        "overall_score": 68.41,
+        "last_success": "2026-09-30T12:01:02.345921+00:00",
         "protocol_counts": {
           "wireguard://": 0,
           "hysteria2://": 0,
@@ -51,7 +51,7 @@
       "url": "https://raw.githubusercontent.com/luxxuria/harvester/main/speed_tested.txt",
       "enabled": false,
       "metrics": {
-        "total_configs": 46,
+        "total_configs": 23,
         "valid_configs": 0,
         "unique_configs": 0,
         "avg_response_time": 0,
@@ -75,18 +75,18 @@
       "enabled": true,
       "metrics": {
         "total_configs": 180,
-        "valid_configs": 94,
-        "unique_configs": 84,
-        "avg_response_time": 0.3,
+        "valid_configs": 92,
+        "unique_configs": 82,
+        "avg_response_time": 0.08,
         "success_count": 1,
         "fail_count": 0,
         "overall_score": 84.94,
-        "last_success": "2026-09-30T10:59:25.023290+00:00",
+        "last_success": "2026-09-30T12:01:02.361455+00:00",
         "protocol_counts": {
           "wireguard://": 0,
           "hysteria2://": 73,
           "vless://": 0,
-          "vmess://": 10,
+          "vmess://": 8,
           "ss://": 0,
           "trojan://": 11,
           "tuic://": 0
