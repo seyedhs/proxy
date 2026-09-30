@@ -1,39 +1,39 @@
 # Proxy Configs
 
 <!-- dynamic timestamp placeholders for workflow sed script -->
-channel_stats_chart.svg?v=1790766006
-performance_report.html?v=1790766006
+channel_stats_chart.svg?v=1790748076
+performance_report.html?v=1790748076
 
 ### Performance Chart
-![Performance Chart](assets/channel_stats_chart.svg?v=1790766006)
+![Performance Chart](assets/channel_stats_chart.svg?v=1790748076)
 
 ### Performance Report
-[View Report](assets/performance_report.html?v=1790766006)
+[View Report](assets/performance_report.html?v=1790748076)
 
 ## HTTP
 
 <!-- STATS:HTTP:START -->
 
-_Last updated: 2026-09-29 06:20 UTC_
+_Last updated: 2026-09-30 11:18 UTC_
 
 ```mermaid
 xychart-beta
     title "Healthy HTTP proxies per source"
-    x-axis ["TheSpeedX/PROXY-List", "proxifly/free-proxy-list", "ProxyScrape", "Previous scan (re-checked)", "monosans/proxy-list", "ALIILAPRO/Proxy", "roosterkid/openproxylist"]
+    x-axis ["proxifly/free-proxy-list", "TheSpeedX/PROXY-List", "ProxyScrape", "Previous scan (re-checked)", "monosans/proxy-list", "ALIILAPRO/Proxy", "roosterkid/openproxylist"]
     y-axis "Healthy proxies"
-    bar [56, 53, 49, 40, 26, 12, 1]
+    bar [89, 61, 36, 34, 28, 24, 1]
 ```
 
 | Source | Healthy proxies |
 |---|---|
-| TheSpeedX/PROXY-List | 56 |
-| proxifly/free-proxy-list | 53 |
-| ProxyScrape | 49 |
-| Previous scan (re-checked) | 40 |
-| monosans/proxy-list | 26 |
-| ALIILAPRO/Proxy | 12 |
+| proxifly/free-proxy-list | 89 |
+| TheSpeedX/PROXY-List | 61 |
+| ProxyScrape | 36 |
+| Previous scan (re-checked) | 34 |
+| monosans/proxy-list | 28 |
+| ALIILAPRO/Proxy | 24 |
 | roosterkid/openproxylist | 1 |
-| **Total unique** | **237** |
+| **Total unique** | **273** |
 
 <!-- STATS:HTTP:END -->
 
@@ -41,25 +41,25 @@ xychart-beta
 
 <!-- STATS:SOCKS5:START -->
 
-_Last updated: 2026-09-29 06:20 UTC_
+_Last updated: 2026-09-30 11:18 UTC_
 
 ```mermaid
 xychart-beta
     title "Healthy SOCKS5 proxies per source"
-    x-axis ["proxifly/free-proxy-list", "ProxyScrape", "TheSpeedX/PROXY-List", "ALIILAPRO/Proxy", "Previous scan (re-checked)", "monosans/proxy-list", "roosterkid/openproxylist"]
+    x-axis ["proxifly/free-proxy-list", "TheSpeedX/PROXY-List", "ProxyScrape", "Previous scan (re-checked)", "ALIILAPRO/Proxy", "monosans/proxy-list", "roosterkid/openproxylist"]
     y-axis "Healthy proxies"
-    bar [89, 48, 45, 29, 25, 17, 2]
+    bar [89, 51, 48, 28, 26, 20, 1]
 ```
 
 | Source | Healthy proxies |
 |---|---|
 | proxifly/free-proxy-list | 89 |
+| TheSpeedX/PROXY-List | 51 |
 | ProxyScrape | 48 |
-| TheSpeedX/PROXY-List | 45 |
-| ALIILAPRO/Proxy | 29 |
-| Previous scan (re-checked) | 25 |
-| monosans/proxy-list | 17 |
-| roosterkid/openproxylist | 2 |
-| **Total unique** | **255** |
+| Previous scan (re-checked) | 28 |
+| ALIILAPRO/Proxy | 26 |
+| monosans/proxy-list | 20 |
+| roosterkid/openproxylist | 1 |
+| **Total unique** | **263** |
 
 <!-- STATS:SOCKS5:END -->
