@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-01T12:01:02.600477+00:00",
+  "timestamp": "2026-10-01T18:01:10.725779+00:00",
   "channels": [
     {
       "url": "https://raw.githubusercontent.com/inaz266/In-az-26/refs/heads/main/filtee.txt",
@@ -8,11 +8,11 @@
         "total_configs": 85,
         "valid_configs": 64,
         "unique_configs": 59,
-        "avg_response_time": 0.08,
+        "avg_response_time": 0.16,
         "success_count": 1,
         "fail_count": 0,
-        "overall_score": 91.76,
-        "last_success": "2026-10-01T12:01:02.574150+00:00",
+        "overall_score": 91.64,
+        "last_success": "2026-10-01T18:01:10.724500+00:00",
         "protocol_counts": {
           "wireguard://": 0,
           "hysteria2://": 0,
@@ -29,20 +29,20 @@
       "enabled": true,
       "metrics": {
         "total_configs": 118,
-        "valid_configs": 52,
-        "unique_configs": 19,
-        "avg_response_time": 0.09,
+        "valid_configs": 51,
+        "unique_configs": 12,
+        "avg_response_time": 0.12,
         "success_count": 1,
         "fail_count": 0,
-        "overall_score": 70.01,
-        "last_success": "2026-10-01T12:01:02.586176+00:00",
+        "overall_score": 66.51,
+        "last_success": "2026-10-01T18:01:10.682684+00:00",
         "protocol_counts": {
           "wireguard://": 0,
           "hysteria2://": 0,
-          "vless://": 1,
+          "vless://": 0,
           "vmess://": 1,
-          "ss://": 7,
-          "trojan://": 43,
+          "ss://": 6,
+          "trojan://": 44,
           "tuic://": 0
         }
       }
@@ -51,14 +51,14 @@
       "url": "https://raw.githubusercontent.com/luxxuria/harvester/main/speed_tested.txt",
       "enabled": true,
       "metrics": {
-        "total_configs": 56,
+        "total_configs": 36,
         "valid_configs": 1,
         "unique_configs": 1,
-        "avg_response_time": 0.03,
+        "avg_response_time": 0.1,
         "success_count": 1,
         "fail_count": 0,
-        "overall_score": 75.4,
-        "last_success": "2026-10-01T12:01:02.527307+00:00",
+        "overall_score": 75.54,
+        "last_success": "2026-10-01T18:01:10.668379+00:00",
         "protocol_counts": {
           "wireguard://": 0,
           "hysteria2://": 0,
@@ -74,21 +74,21 @@
       "url": "https://raw.githubusercontent.com/4n0nymou3/multi-proxy-config-fetcher/refs/heads/main/configs/proxy_configs_tested.txt",
       "enabled": true,
       "metrics": {
-        "total_configs": 171,
-        "valid_configs": 90,
-        "unique_configs": 82,
+        "total_configs": 170,
+        "valid_configs": 85,
+        "unique_configs": 85,
         "avg_response_time": 0.09,
         "success_count": 1,
         "fail_count": 0,
-        "overall_score": 85.79,
-        "last_success": "2026-10-01T12:01:02.599177+00:00",
+        "overall_score": 87.37,
+        "last_success": "2026-10-01T18:01:10.665899+00:00",
         "protocol_counts": {
           "wireguard://": 0,
           "hysteria2://": 72,
           "vless://": 0,
-          "vmess://": 7,
+          "vmess://": 10,
           "ss://": 0,
-          "trojan://": 11,
+          "trojan://": 3,
           "tuic://": 0
         }
       }
