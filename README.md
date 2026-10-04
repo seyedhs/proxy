@@ -1,14 +1,14 @@
 # Proxy Configs
 
 <!-- dynamic timestamp placeholders for workflow sed script -->
-channel_stats_chart.svg?v=1791072107
-performance_report.html?v=1791072107
+channel_stats_chart.svg?v=1791093715
+performance_report.html?v=1791093715
 
 ### Performance Chart
-![Performance Chart](assets/channel_stats_chart.svg?v=1791072107)
+![Performance Chart](assets/channel_stats_chart.svg?v=1791093715)
 
 ### Performance Report
-[View Report](assets/performance_report.html?v=1791072107)
+[View Report](assets/performance_report.html?v=1791093715)
 
 ## HTTP
 
