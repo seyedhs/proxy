@@ -202,6 +202,14 @@ TIMEOUT = 8  # seconds
 # published, per protocol (so up to TOP_N HTTP + TOP_N SOCKS5 lines total).
 TOP_N = 100
 
+# Soft wall-clock budget for the whole scan. The workflow's
+# `timeout-minutes` is the hard stop; this is deliberately below it so
+# we always get to push partial results and update the README instead
+# of being SIGKILLed mid-step with nothing committed. Bump the
+# workflow timeout if you raise these.
+TOTAL_BUDGET_SECONDS = 35 * 60
+GEO_BUDGET_SECONDS = 6 * 60
+
 REMARK = "زن زندگی آزادی"
 
 # Geolocation providers for the final flag-emoji step, tried in order with
@@ -308,17 +316,31 @@ def fetch_all_sources(sources):
     """Returns proxy_sources: dict[proxy] -> set of source names that
     reported it. This dict itself is the dedupe step — a proxy reported
     by several sources only ever gets one entry, so it's only tested
-    once."""
+    once.
+
+    Sources are fetched concurrently — with 8 entries × up to 20 s
+    timeout each, sequential fetching alone could eat 2.5 min per
+    protocol and was a big chunk of the old 20-minute overrun.
+    """
     proxy_sources = {}
-    for source in sources:
-        fetcher = FETCHERS.get(source["type"])
-        if not fetcher:
-            print(f"[{source['name']}] unknown type '{source['type']}', skipping")
-            continue
-        found = fetcher(source)
-        print(f"[{source['name']}] fetched {len(found)}")
-        for proxy in found:
-            proxy_sources.setdefault(proxy, set()).add(source["name"])
+    runnable = [s for s in sources if s.get("type") in FETCHERS]
+    if not runnable:
+        return proxy_sources
+
+    with concurrent.futures.ThreadPoolExecutor(max_workers=len(runnable)) as executor:
+        future_to_source = {
+            executor.submit(FETCHERS[s["type"]], s): s for s in runnable
+        }
+        for future in concurrent.futures.as_completed(future_to_source):
+            source = future_to_source[future]
+            try:
+                found = future.result()
+            except Exception as e:
+                print(f"[{source['name']}] failed: {e}")
+                found = []
+            print(f"[{source['name']}] fetched {len(found)}")
+            for proxy in found:
+                proxy_sources.setdefault(proxy, set()).add(source["name"])
     return proxy_sources
 
 
@@ -374,23 +396,49 @@ def check_proxy(proxy, protocol, timeout):
     return None
 
 
-def test_all(candidates, protocol, timeout):
+def test_all(candidates, protocol, timeout, deadline=None):
     """Tests every candidate once. Returns dict: proxy -> real-request
-    elapsed seconds, for the ones that passed."""
+    elapsed seconds, for the ones that passed.
+
+    If `deadline` (absolute time.time() value) is set and reached before
+    every future completes, we stop early and return whatever already
+    passed. The old version ran until every candidate had either passed
+    or hit `timeout` — with thousands of candidates and only 150 worker
+    threads that could blow well past the workflow's 20-minute ceiling,
+    which killed the job with no partial results committed at all.
+    """
     results = {}
     if not candidates:
         print(f"[{protocol}] 0 candidates, skipping")
         return results
-    with concurrent.futures.ThreadPoolExecutor(max_workers=MAX_THREADS) as executor:
+
+    started = time.time()
+    executor = concurrent.futures.ThreadPoolExecutor(max_workers=MAX_THREADS)
+    try:
         futures = {
             executor.submit(check_proxy, p, protocol, timeout): p for p in candidates
         }
-        for future in concurrent.futures.as_completed(futures):
-            result = future.result()
-            if result:
-                proxy, elapsed = result
-                results[proxy] = elapsed
-    print(f"[{protocol}] {len(results)}/{len(candidates)} passed (timeout={timeout}s)")
+        try:
+            for future in concurrent.futures.as_completed(futures):
+                if deadline is not None and time.time() >= deadline:
+                    print(f"[{protocol}] deadline reached, stopping early")
+                    break
+                result = future.result()
+                if result:
+                    proxy, elapsed = result
+                    results[proxy] = elapsed
+        except concurrent.futures.TimeoutError:
+            print(f"[{protocol}] waiter timed out")
+    finally:
+        # wait=False: a proxy that drips bytes slowly can keep a worker busy
+        # far past `timeout` (requests' timeout is per-read, not total). A
+        # `with` block would wait for it on exit and defeat the deadline.
+        # cancel_futures drops everything that hasn't started yet.
+        executor.shutdown(wait=False, cancel_futures=True)
+
+    took = time.time() - started
+    print(f"[{protocol}] {len(results)}/{len(candidates)} passed "
+          f"in {took:.1f}s (timeout={timeout}s)")
     return results
 
 
@@ -605,10 +653,16 @@ def verify_public_repo_access():
 
 def main():
     print("Starting proxy scan (GitHub Actions run)...\n")
+    t0 = time.time()
+    deadline_all = t0 + TOTAL_BUDGET_SECONDS
 
     verify_public_repo_access()
 
-    # ---- gather candidates per protocol (each dict is already deduped) ----
+    # Each protocol gets an equal slice of the time between "now" and
+    # the point where we still have to leave room for geolocation and
+    # the push. Without this, a single protocol with a very long
+    # candidate list would eat the entire budget and the second
+    # protocol would never even be tested.
     print("\n=== Fetching HTTP candidates ===")
     http_sources = fetch_all_sources(HTTP_SOURCES)
     for proxy in read_old_proxies(HTTP_FILE_PATH, f"HTTP {PREVIOUS_SCAN_LABEL}"):
@@ -621,10 +675,26 @@ def main():
 
     print(f"\nCandidates to test: {len(http_sources)} HTTP, {len(socks5_sources)} SOCKS5")
 
+    # Split the remaining time (after fetches, before geo+push) evenly.
+    test_deadline = deadline_all - GEO_BUDGET_SECONDS
+    per_proto_budget = max(60, (test_deadline - time.time()) / 2)
+
+    # Previously-healthy proxies go first: if a deadline cuts testing short,
+    # the untested tail should be fresh unknowns, not proxies we already
+    # published last run.
+    def prioritized(proxy_sources):
+        return sorted(proxy_sources, key=lambda p: PREVIOUS_SCAN_LABEL not in proxy_sources[p])
+
+    http_deadline = time.time() + per_proto_budget
     print("\n=== Testing HTTP candidates (real request) ===")
-    http_results = test_all(list(http_sources.keys()), "http", TIMEOUT)
+    http_results = test_all(prioritized(http_sources), "http", TIMEOUT,
+                            deadline=http_deadline)
+
+    socks5_deadline = min(deadline_all - GEO_BUDGET_SECONDS,
+                          time.time() + per_proto_budget)
     print("\n=== Testing SOCKS5 candidates (real request) ===")
-    socks5_results = test_all(list(socks5_sources.keys()), "socks5", TIMEOUT)
+    socks5_results = test_all(prioritized(socks5_sources), "socks5", TIMEOUT,
+                              deadline=socks5_deadline)
 
     working_http = sorted(http_results.items(), key=lambda x: x[1])[:TOP_N]
     working_socks5 = sorted(socks5_results.items(), key=lambda x: x[1])[:TOP_N]
@@ -667,8 +737,14 @@ def main():
 
     merge_stats_into_readme(http_counts_sorted, socks5_counts_sorted)
 
-    print("\nDone.")
+    print(f"\nDone in {time.time() - t0:.1f}s.")
 
 
 if __name__ == "__main__":
     main()
+    # Worker threads still stuck on a slow proxy after an early stop would
+    # otherwise keep the interpreter alive at exit. Everything is already
+    # pushed/written by now, so exit immediately.
+    sys.stdout.flush()
+    sys.stderr.flush()
+    os._exit(0)
