@@ -526,7 +526,12 @@ jobs:
     # Hard ceiling so a hung request can never block a future run.
     # The 3-stage test with reduced timeouts should finish in a few
     # minutes; adjust upward if you add a lot more sources.
-    timeout-minutes: 20
+    # Raised: real work is 16 source fetches + up to 2×(N candidates) real
+    # HTTP tests + geolocation of up to 200 survivors with 4-provider
+    # fallback each. 20m was cutting runs off mid-test with no partial
+    # results committed. Script also self-limits via TOTAL_BUDGET_SECONDS,
+    # so this is just the hard stop, not the target.
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
 
