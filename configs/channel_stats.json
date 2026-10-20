@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-20T12:00:41.196688+00:00",
+  "timestamp": "2026-10-20T18:00:38.814771+00:00",
   "channels": [
     {
       "url": "https://raw.githubusercontent.com/mhcfpTopic/config/refs/heads/main/xray_final.txt#Mahsa_Topic",
@@ -7,12 +7,12 @@
       "metrics": {
         "total_configs": 1025,
         "valid_configs": 772,
-        "unique_configs": 364,
-        "avg_response_time": 0.19,
+        "unique_configs": 363,
+        "avg_response_time": 0.2,
         "success_count": 1,
         "fail_count": 0,
-        "overall_score": 80.33,
-        "last_success": "2026-10-20T12:00:41.194703+00:00",
+        "overall_score": 80.29,
+        "last_success": "2026-10-20T18:00:38.812902+00:00",
         "protocol_counts": {
           "wireguard://": 0,
           "hysteria2://": 7,
@@ -28,21 +28,21 @@
       "url": "https://raw.githubusercontent.com/inaz266/In-az-26/refs/heads/main/filtee.txt",
       "enabled": true,
       "metrics": {
-        "total_configs": 83,
-        "valid_configs": 66,
-        "unique_configs": 22,
-        "avg_response_time": 0.16,
+        "total_configs": 75,
+        "valid_configs": 58,
+        "unique_configs": 19,
+        "avg_response_time": 0.13,
         "success_count": 1,
         "fail_count": 0,
-        "overall_score": 77.97,
-        "last_success": "2026-10-20T12:00:41.116340+00:00",
+        "overall_score": 77.33,
+        "last_success": "2026-10-20T18:00:38.680893+00:00",
         "protocol_counts": {
           "wireguard://": 0,
           "hysteria2://": 0,
-          "vless://": 42,
-          "vmess://": 1,
-          "ss://": 0,
-          "trojan://": 23,
+          "vless://": 44,
+          "vmess://": 0,
+          "ss://": 2,
+          "trojan://": 12,
           "tuic://": 0
         }
       }
@@ -52,20 +52,20 @@
       "enabled": true,
       "metrics": {
         "total_configs": 118,
-        "valid_configs": 35,
-        "unique_configs": 7,
-        "avg_response_time": 0.23,
+        "valid_configs": 44,
+        "unique_configs": 2,
+        "avg_response_time": 0.1,
         "success_count": 1,
         "fail_count": 0,
-        "overall_score": 62.07,
-        "last_success": "2026-10-20T12:00:41.195324+00:00",
+        "overall_score": 60.31,
+        "last_success": "2026-10-20T18:00:38.660576+00:00",
         "protocol_counts": {
           "wireguard://": 0,
           "hysteria2://": 0,
-          "vless://": 21,
+          "vless://": 44,
           "vmess://": 0,
-          "ss://": 13,
-          "trojan://": 1,
+          "ss://": 0,
+          "trojan://": 0,
           "tuic://": 0
         }
       }
@@ -74,7 +74,7 @@
       "url": "https://raw.githubusercontent.com/luxxuria/harvester/main/speed_tested.txt",
       "enabled": false,
       "metrics": {
-        "total_configs": 28,
+        "total_configs": 29,
         "valid_configs": 0,
         "unique_configs": 0,
         "avg_response_time": 0,
@@ -97,21 +97,21 @@
       "url": "https://raw.githubusercontent.com/4n0nymou3/multi-proxy-config-fetcher/refs/heads/main/configs/proxy_configs_tested.txt",
       "enabled": true,
       "metrics": {
-        "total_configs": 160,
-        "valid_configs": 83,
-        "unique_configs": 82,
-        "avg_response_time": 0.12,
+        "total_configs": 175,
+        "valid_configs": 89,
+        "unique_configs": 87,
+        "avg_response_time": 0.11,
         "success_count": 1,
         "fail_count": 0,
-        "overall_score": 87.49,
-        "last_success": "2026-10-20T12:00:41.092894+00:00",
+        "overall_score": 86.98,
+        "last_success": "2026-10-20T18:00:38.674560+00:00",
         "protocol_counts": {
           "wireguard://": 0,
           "hysteria2://": 73,
           "vless://": 0,
-          "vmess://": 2,
+          "vmess://": 3,
           "ss://": 0,
-          "trojan://": 8,
+          "trojan://": 13,
           "tuic://": 0
         }
       }
