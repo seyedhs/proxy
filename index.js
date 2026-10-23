@@ -341,20 +341,22 @@ async function lookupCountryCode(ip) {
 }
 
 async function getCountryAndFlag(cfg, identityKey) {
+  // کش بر اساس هاست (نه identity کامل) تا واریانت‌های مختلف یک سرور فقط یک بار lookup بخورن
+  const host = getHostForGeo(cfg);
+  const geoKey = `host:${String(host).toLowerCase()}`;
   const extracted = extractFlagFromRemark(cfg.remark);
   if (extracted) {
-    geoCache[identityKey] = extracted.countryCode;
+    geoCache[geoKey] = extracted.countryCode;
     return extracted;
   }
-  if (geoCache[identityKey]) {
-    const cc = geoCache[identityKey];
-    return { countryCode: cc, flag: countryCodeToFlag(cc) };
+  const cached = geoCache[geoKey] || geoCache[identityKey];
+  if (cached) {
+    return { countryCode: cached, flag: countryCodeToFlag(cached) };
   }
-  const host = getHostForGeo(cfg);
   const ip = await resolveHostToIp(host);
   const cc = await lookupCountryCode(ip);
   if (cc !== 'XX') {
-    geoCache[identityKey] = cc;
+    geoCache[geoKey] = cc;
   }
   return { countryCode: cc, flag: countryCodeToFlag(cc) };
 }
@@ -1072,15 +1074,45 @@ async function buildCdnCleanIp(numberedConfigs, cleanIpListUrl, remarkBase, numb
 }
 
 // ---------- ابزارهای اصلی ----------
+// کلید dedupe برای کانفیگ‌های VPN.
+// نکته‌ی مهم: path/host/sni/fp/fm/cs/packetEncoding هم داخل کلید هستن تا واریانت‌های
+// یک نود (اصلی / Sni-Spoofing / IPv6 / path متفاوت) به‌عنوان یک کانفیگ حساب نشن.
 function vpnIdentityKey(cfg) {
-  if (cfg.protocol === 'vmess') {
-    const j = cfg.vmessJson || {};
-    return `vmess|${j.add}|${j.port}|${j.id}`;
+  const lc = (v) => String(v == null ? '' : v).toLowerCase();
+  // فقط وقتی vmessJson واقعاً پارس شده از مسیر مخصوص vmess می‌ره؛
+  // اگه پارس JSON شکست خورده و به parseGenericUri افتاده، از مسیر عمومی پایین کلید ساخته می‌شه
+  // (قبلاً همه‌ی این‌ها می‌شدن "vmess|undefined|undefined|undefined" و در dedupe فقط یکی می‌موند).
+  if (cfg.protocol === 'vmess' && cfg.vmessJson) {
+    const j = cfg.vmessJson;
+    return ['vmess', lc(j.add), j.port, j.id, lc(j.net), j.path || '', lc(j.host), lc(j.tls), lc(j.sni), lc(j.type)].join('|');
   }
   if (cfg.protocol === 'ss') {
-    return `ss|${cfg.server}|${cfg.port}|${cfg.method}|${cfg.password}`;
+    return `ss|${lc(cfg.server)}|${cfg.port}|${cfg.method}|${cfg.password}`;
   }
-  return `${cfg.protocol}|${cfg.server}|${cfg.port}|${cfg.userinfo}`;
+  const p = cfg.params || {};
+  return [
+    cfg.protocol,
+    lc(cfg.server),
+    cfg.port,
+    cfg.userinfo,
+    lc(p.type || p.net),
+    p.path || '',
+    lc(p.host),
+    lc(p.sni),
+    p.fp || '',
+    p.fm || '',
+    p.cs || '',
+    p.packetEncoding || '',
+    p.security || '',
+    p.pbk || '',
+    p.sid || '',
+    p.serviceName || '',
+    p.mode || '',
+    p.flow || '',
+    p.headerType || '',
+    p.obfs || '',
+    p['obfs-password'] || '',
+  ].join('|');
 }
 
 function plainIdentityKey(cfg) {
@@ -1099,10 +1131,19 @@ function dedupeBy(list, keyFn) {
   return out;
 }
 
-// برای خروجی‌هایی که skipGeo فعاله: بدون هیچ درخواست شبکه‌ای (نه DNS، نه ipinfo/ip-api)
-// مستقیم پرچم خالی برمی‌گردونه — نه کند می‌کنه، نه به سقف API فشار میاره.
+// برای خروجی‌هایی که skipGeo فعاله: بدون هیچ درخواست شبکه‌ای (نه DNS، نه ipinfo/ip-api).
+// پرچم فقط و فقط اگه توی خود remark کانفیگ باشه (ایموجی پرچم یا [US]/[DE]) نگه داشته می‌شه؛
+// در غیر این صورت خالی می‌مونه. کشور هم فقط از همون استخراج پر می‌شه.
 function enrichWithoutGeo(items) {
-  return items.map(({ cfg, identity }) => ({ cfg, flag: '', country: null, identity }));
+  return items.map(({ cfg, identity }) => {
+    const extracted = extractFlagFromRemark(cfg.remark);
+    return {
+      cfg,
+      flag: extracted ? extracted.flag : '',
+      country: extracted ? extracted.countryCode : null,
+      identity,
+    };
+  });
 }
 
 // جایگزینِ حلقه‌ی سریالِ getCountryAndFlag: تشخیص لوکیشن را با همزمانی محدود انجام می‌دهد
