@@ -16,6 +16,7 @@ SOURCE_URLS = [
   #  "https://raw.githubusercontent.com/zieng2/wl/refs/heads/main/vless_universal.txt",
   "https://raw.githubusercontent.com/3000S-HTTP/sNSub/main/output/best59_base64.txt",
     "https://raw.githubusercontent.com/luxxuria/harvester/main/speed_tested.txt",
+   "https://sub.namazvpn.workers.dev",
     "https://raw.githubusercontent.com/4n0nymou3/multi-proxy-config-fetcher/refs/heads/main/configs/proxy_configs_tested.txt",
   # "https://raw.githubusercontent.com/ShadowException/VPN/refs/heads/main/configs/VPN-cat#shadowexception",
    # "https://raw.githubusercontent.com/RKPchannel/RKP_bypass_configs/refs/heads/main/whitelist.txt",
