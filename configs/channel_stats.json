@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-30T00:00:43.736117+00:00",
+  "timestamp": "2026-10-30T06:00:39.625169+00:00",
   "channels": [
     {
       "url": "https://raw.githubusercontent.com/mhcfpTopic/config/refs/heads/main/xray_final.txt#Mahsa_Topic",
@@ -7,12 +7,12 @@
       "metrics": {
         "total_configs": 1005,
         "valid_configs": 727,
-        "unique_configs": 375,
-        "avg_response_time": 0.12,
+        "unique_configs": 376,
+        "avg_response_time": 0.09,
         "success_count": 1,
         "fail_count": 0,
-        "overall_score": 80.79,
-        "last_success": "2026-10-30T00:00:43.600177+00:00",
+        "overall_score": 80.88,
+        "last_success": "2026-10-30T06:00:39.537334+00:00",
         "protocol_counts": {
           "wireguard://": 0,
           "hysteria2://": 6,
@@ -31,11 +31,11 @@
         "total_configs": 127,
         "valid_configs": 121,
         "unique_configs": 76,
-        "avg_response_time": 0.08,
+        "avg_response_time": 0.07,
         "success_count": 1,
         "fail_count": 0,
-        "overall_score": 89.39,
-        "last_success": "2026-10-30T00:00:43.507261+00:00",
+        "overall_score": 89.41,
+        "last_success": "2026-10-30T06:00:39.464748+00:00",
         "protocol_counts": {
           "wireguard://": 0,
           "hysteria2://": 0,
@@ -52,20 +52,20 @@
       "enabled": true,
       "metrics": {
         "total_configs": 118,
-        "valid_configs": 42,
-        "unique_configs": 39,
+        "valid_configs": 39,
+        "unique_configs": 31,
         "avg_response_time": 0.08,
         "success_count": 1,
         "fail_count": 0,
-        "overall_score": 81.99,
-        "last_success": "2026-10-30T00:00:43.498109+00:00",
+        "overall_score": 78.01,
+        "last_success": "2026-10-30T06:00:39.469870+00:00",
         "protocol_counts": {
           "wireguard://": 0,
           "hysteria2://": 0,
           "vless://": 0,
           "vmess://": 0,
           "ss://": 9,
-          "trojan://": 33,
+          "trojan://": 30,
           "tuic://": 0
         }
       }
@@ -97,21 +97,21 @@
       "url": "https://sub.namazvpn.workers.dev",
       "enabled": true,
       "metrics": {
-        "total_configs": 444,
-        "valid_configs": 336,
-        "unique_configs": 205,
-        "avg_response_time": 0.29,
+        "total_configs": 500,
+        "valid_configs": 451,
+        "unique_configs": 99,
+        "avg_response_time": 0.2,
         "success_count": 1,
         "fail_count": 0,
-        "overall_score": 83.74,
-        "last_success": "2026-10-30T00:00:43.733648+00:00",
+        "overall_score": 77.74,
+        "last_success": "2026-10-30T06:00:39.622806+00:00",
         "protocol_counts": {
           "wireguard://": 0,
-          "hysteria2://": 1,
-          "vless://": 143,
-          "vmess://": 106,
-          "ss://": 13,
-          "trojan://": 73,
+          "hysteria2://": 0,
+          "vless://": 50,
+          "vmess://": 32,
+          "ss://": 5,
+          "trojan://": 364,
           "tuic://": 0
         }
       }
@@ -120,21 +120,21 @@
       "url": "https://raw.githubusercontent.com/4n0nymou3/multi-proxy-config-fetcher/refs/heads/main/configs/proxy_configs_tested.txt",
       "enabled": true,
       "metrics": {
-        "total_configs": 316,
-        "valid_configs": 169,
-        "unique_configs": 162,
-        "avg_response_time": 0.05,
+        "total_configs": 317,
+        "valid_configs": 164,
+        "unique_configs": 157,
+        "avg_response_time": 0.04,
         "success_count": 1,
         "fail_count": 0,
-        "overall_score": 87.26,
-        "last_success": "2026-10-30T00:00:43.493819+00:00",
+        "overall_score": 86.81,
+        "last_success": "2026-10-30T06:00:39.455385+00:00",
         "protocol_counts": {
           "wireguard://": 0,
           "hysteria2://": 119,
           "vless://": 0,
-          "vmess://": 37,
+          "vmess://": 30,
           "ss://": 0,
-          "trojan://": 13,
+          "trojan://": 15,
           "tuic://": 0
         }
       }
