@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-02T12:01:12.924882+00:00",
+  "timestamp": "2026-11-02T18:01:20.043154+00:00",
   "channels": [
     {
       "url": "https://raw.githubusercontent.com/mhcfpTopic/config/refs/heads/main/xray_final.txt#Mahsa_Topic",
@@ -7,12 +7,12 @@
       "metrics": {
         "total_configs": 1005,
         "valid_configs": 695,
-        "unique_configs": 379,
-        "avg_response_time": 0.12,
+        "unique_configs": 397,
+        "avg_response_time": 0.15,
         "success_count": 1,
         "fail_count": 0,
-        "overall_score": 80.74,
-        "last_success": "2026-11-02T12:01:12.795058+00:00",
+        "overall_score": 81.34,
+        "last_success": "2026-11-02T18:01:20.007548+00:00",
         "protocol_counts": {
           "wireguard://": 0,
           "hysteria2://": 6,
@@ -28,21 +28,21 @@
       "url": "https://raw.githubusercontent.com/inaz266/In-az-26/refs/heads/main/filtee.txt",
       "enabled": true,
       "metrics": {
-        "total_configs": 108,
-        "valid_configs": 70,
-        "unique_configs": 44,
-        "avg_response_time": 0.07,
+        "total_configs": 92,
+        "valid_configs": 59,
+        "unique_configs": 39,
+        "avg_response_time": 0.14,
         "success_count": 1,
         "fail_count": 0,
-        "overall_score": 81.82,
-        "last_success": "2026-11-02T12:01:12.687800+00:00",
+        "overall_score": 82.34,
+        "last_success": "2026-11-02T18:01:19.965141+00:00",
         "protocol_counts": {
           "wireguard://": 0,
           "hysteria2://": 0,
-          "vless://": 65,
-          "vmess://": 0,
+          "vless://": 56,
+          "vmess://": 3,
           "ss://": 0,
-          "trojan://": 5,
+          "trojan://": 0,
           "tuic://": 0
         }
       }
@@ -53,12 +53,12 @@
       "metrics": {
         "total_configs": 118,
         "valid_configs": 42,
-        "unique_configs": 14,
-        "avg_response_time": 0.18,
+        "unique_configs": 15,
+        "avg_response_time": 0.22,
         "success_count": 1,
         "fail_count": 0,
-        "overall_score": 66.96,
-        "last_success": "2026-11-02T12:01:12.799089+00:00",
+        "overall_score": 67.5,
+        "last_success": "2026-11-02T18:01:20.041671+00:00",
         "protocol_counts": {
           "wireguard://": 0,
           "hysteria2://": 0,
@@ -74,7 +74,7 @@
       "url": "https://raw.githubusercontent.com/luxxuria/harvester/main/speed_tested.txt",
       "enabled": false,
       "metrics": {
-        "total_configs": 56,
+        "total_configs": 43,
         "valid_configs": 0,
         "unique_configs": 0,
         "avg_response_time": 0,
@@ -97,21 +97,21 @@
       "url": "https://sub.namazvpn.workers.dev",
       "enabled": true,
       "metrics": {
-        "total_configs": 240,
-        "valid_configs": 188,
-        "unique_configs": 141,
-        "avg_response_time": 0.29,
+        "total_configs": 247,
+        "valid_configs": 194,
+        "unique_configs": 167,
+        "avg_response_time": 0.21,
         "success_count": 1,
         "fail_count": 0,
-        "overall_score": 87.9,
-        "last_success": "2026-11-02T12:01:12.922912+00:00",
+        "overall_score": 90.84,
+        "last_success": "2026-11-02T18:01:20.038612+00:00",
         "protocol_counts": {
           "wireguard://": 0,
-          "hysteria2://": 0,
-          "vless://": 43,
-          "vmess://": 86,
-          "ss://": 25,
-          "trojan://": 34,
+          "hysteria2://": 3,
+          "vless://": 44,
+          "vmess://": 119,
+          "ss://": 12,
+          "trojan://": 16,
           "tuic://": 0
         }
       }
@@ -120,21 +120,21 @@
       "url": "https://raw.githubusercontent.com/4n0nymou3/multi-proxy-config-fetcher/refs/heads/main/configs/proxy_configs_tested.txt",
       "enabled": true,
       "metrics": {
-        "total_configs": 191,
-        "valid_configs": 115,
-        "unique_configs": 115,
-        "avg_response_time": 0.07,
+        "total_configs": 177,
+        "valid_configs": 92,
+        "unique_configs": 92,
+        "avg_response_time": 0.13,
         "success_count": 1,
         "fail_count": 0,
-        "overall_score": 89.95,
-        "last_success": "2026-11-02T12:01:12.703204+00:00",
+        "overall_score": 87.8,
+        "last_success": "2026-11-02T18:01:19.960813+00:00",
         "protocol_counts": {
           "wireguard://": 0,
           "hysteria2://": 75,
           "vless://": 0,
-          "vmess://": 7,
+          "vmess://": 8,
           "ss://": 0,
-          "trojan://": 33,
+          "trojan://": 9,
           "tuic://": 0
         }
       }
