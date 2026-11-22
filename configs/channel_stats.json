@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-22T12:01:06.358475+00:00",
+  "timestamp": "2026-11-22T18:01:09.341922+00:00",
   "channels": [
     {
       "url": "https://raw.githubusercontent.com/mhcfpTopic/config/refs/heads/main/xray_final.txt#Mahsa_Topic",
@@ -7,12 +7,12 @@
       "metrics": {
         "total_configs": 3402,
         "valid_configs": 2412,
-        "unique_configs": 1305,
-        "avg_response_time": 0.16,
+        "unique_configs": 1281,
+        "avg_response_time": 0.17,
         "success_count": 1,
         "fail_count": 0,
-        "overall_score": 81.0,
-        "last_success": "2026-11-22T12:01:06.344834+00:00",
+        "overall_score": 80.74,
+        "last_success": "2026-11-22T18:01:09.338334+00:00",
         "protocol_counts": {
           "wireguard://": 0,
           "hysteria2://": 94,
@@ -31,11 +31,11 @@
         "total_configs": 97,
         "valid_configs": 84,
         "unique_configs": 55,
-        "avg_response_time": 0.1,
+        "avg_response_time": 0.11,
         "success_count": 1,
         "fail_count": 0,
-        "overall_score": 87.87,
-        "last_success": "2026-11-22T12:01:06.160432+00:00",
+        "overall_score": 87.85,
+        "last_success": "2026-11-22T18:01:09.075083+00:00",
         "protocol_counts": {
           "wireguard://": 0,
           "hysteria2://": 0,
@@ -54,11 +54,11 @@
         "total_configs": 118,
         "valid_configs": 37,
         "unique_configs": 31,
-        "avg_response_time": 0.09,
+        "avg_response_time": 0.08,
         "success_count": 1,
         "fail_count": 0,
-        "overall_score": 78.64,
-        "last_success": "2026-11-22T12:01:06.155794+00:00",
+        "overall_score": 78.67,
+        "last_success": "2026-11-22T18:01:09.033653+00:00",
         "protocol_counts": {
           "wireguard://": 0,
           "hysteria2://": 0,
@@ -74,7 +74,7 @@
       "url": "https://raw.githubusercontent.com/luxxuria/harvester/main/speed_tested.txt",
       "enabled": false,
       "metrics": {
-        "total_configs": 56,
+        "total_configs": 37,
         "valid_configs": 0,
         "unique_configs": 0,
         "avg_response_time": 0,
@@ -97,21 +97,21 @@
       "url": "https://sub.namazvpn.workers.dev",
       "enabled": true,
       "metrics": {
-        "total_configs": 242,
-        "valid_configs": 192,
-        "unique_configs": 150,
-        "avg_response_time": 0.29,
+        "total_configs": 241,
+        "valid_configs": 181,
+        "unique_configs": 132,
+        "avg_response_time": 0.34,
         "success_count": 1,
         "fail_count": 0,
-        "overall_score": 88.94,
-        "last_success": "2026-11-22T12:01:06.356164+00:00",
+        "overall_score": 86.5,
+        "last_success": "2026-11-22T18:01:09.329223+00:00",
         "protocol_counts": {
           "wireguard://": 0,
           "hysteria2://": 2,
-          "vless://": 57,
-          "vmess://": 105,
-          "ss://": 4,
-          "trojan://": 24,
+          "vless://": 76,
+          "vmess://": 64,
+          "ss://": 6,
+          "trojan://": 33,
           "tuic://": 0
         }
       }
@@ -120,21 +120,21 @@
       "url": "https://raw.githubusercontent.com/4n0nymou3/multi-proxy-config-fetcher/refs/heads/main/configs/proxy_configs_tested.txt",
       "enabled": true,
       "metrics": {
-        "total_configs": 190,
-        "valid_configs": 89,
-        "unique_configs": 88,
-        "avg_response_time": 0.11,
+        "total_configs": 382,
+        "valid_configs": 157,
+        "unique_configs": 153,
+        "avg_response_time": 0.08,
         "success_count": 1,
         "fail_count": 0,
-        "overall_score": 86.26,
-        "last_success": "2026-11-22T12:01:06.183770+00:00",
+        "overall_score": 84.52,
+        "last_success": "2026-11-22T18:01:09.059675+00:00",
         "protocol_counts": {
           "wireguard://": 0,
           "hysteria2://": 72,
           "vless://": 0,
-          "vmess://": 12,
+          "vmess://": 49,
           "ss://": 0,
-          "trojan://": 5,
+          "trojan://": 36,
           "tuic://": 0
         }
       }
